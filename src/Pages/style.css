@@ -1,0 +1,310 @@
+/*card 1 */
+.card1{
+    margin-top: 1%;
+    border-radius: 20px;
+    background-color: #dedcdc;
+    box-sizing: border-box;
+    hyphens: manual;
+    width: 94%;
+    margin-left:3%;
+    height: 40em !important;
+    padding: 10%;
+}
+
+.title1{
+    font-size: 80px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    line-height: 100px;
+}
+
+.title3{
+    font-size: 164px;
+    line-height: 98px;
+    font-weight: 900;
+    color: white;
+}
+
+.title2{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.btn{
+    background-color: #f42c37!important;
+    border-radius: 30px!important;
+    color: white!important;
+    margin-top: 2% !important;
+    padding: 1.2% !important;
+}
+
+#btn1 {
+    background-color: #ffffff!important;
+    border-radius: 30px!important;
+    color: #f42c37!important;
+    margin-top: 2% !important;
+    padding: 1.2% !important;
+}
+.img{
+    height: 600px;
+    width: 980px;
+    position: absolute;
+    margin: 7% 0 0 28% ;
+
+}
+
+/*card 2*/
+.card2{
+     margin-top: 2%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    hyphens: manual;
+    width: 23%;
+    margin-left:3%;
+    height: 23em !important;
+    padding: 11% 4% 4% 2.5%;
+    background-color: #1f1d1d;
+}
+.sub1{
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 35px;
+    color: white;
+}
+
+.sub2{
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    /*margin-bottom: 8%;*/
+}
+
+.sub3{
+    font-size: 44px;
+    line-height: 18px;
+    font-weight: 900;
+    color: #454343;
+}
+
+.btn1 {
+    position: absolute;
+    background-color: #f42c37 !important;
+    border-radius: 30px !important;
+    color: white !important;
+    margin-top: 5% !important;
+    padding: 3% 8% !important;
+}
+
+
+.img1{
+    position: absolute;
+    margin: 0% 0 0 0 ;
+}
+
+/*card 3*/
+.card3{
+     margin-top: 2%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    hyphens: manual;
+    width: 23%;
+    margin-left:3%;
+    height: 23em !important;
+    padding: 11% 4% 4% 2.5%;
+    background-color: #f8bf24;
+}
+.sub4{
+    font-size: 44px;
+    line-height: 18px;
+    font-weight: 900;
+    color: #ffd76a;
+}
+
+.img2{
+    position: absolute;
+    margin: 2% 0 0 29% ;
+}
+
+/*card 4*/
+
+.card4{
+    margin-top: 2%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    hyphens: manual;
+    width: 42%;
+    margin-left:3%;
+    height: 23em !important;
+    padding: 11% 4% 4% 2.5%;
+    background-color: #f42c37;
+}
+
+.sub5{
+     font-size: 44px;
+    line-height: 18px;
+    font-weight: 900;
+    color: #f6565f;
+}
+
+.btn2{
+    background-color: white!important;
+    border-radius: 30px!important;
+    color: #f42c37!important;
+    margin-top: 5% !important;
+    padding: 2% 7% !important;
+}
+
+.img3{
+    width: 40%;
+    position: absolute;
+    margin: 2% 0 0 64% ;
+}
+
+/*card 5*/
+
+.card5{
+    margin-top: 2%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    hyphens: manual;
+    width: 42%;
+    margin-left:3%;
+    height: 23em !important;
+    padding: 11% 4% 4% 2.5%;
+    background-image: linear-gradient(180deg,#edeced 0%,#eef0f3 100%);
+
+}
+
+.sub6{
+     font-size: 44px;
+    line-height: 18px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.img4{
+    height: auto;
+    width: 20%;
+    position: absolute;
+    margin: 5% 0 0 22% ;
+}
+
+/*card 6*/
+.card6{
+     margin-top: 2%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    hyphens: manual;
+    width: 23%;
+    margin-left:3%;
+    height: 23em !important;
+    padding: 11% 4% 4% 2.5%;
+    background-color: #2dd06f;
+    background-image: url('https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/man-wearing-virtual-reality-headset-at-home-D7AYCTV-2.png');
+    background-position: 10px 69px;
+    background-size: 400px 300px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.sub7{
+    font-size: 44px;
+    line-height: 18px;
+    font-weight: 900;
+    color: #57d68b;
+}
+
+.btn3 {
+    position: absolute;
+    background-color: #ffffff !important;
+    border-radius: 30px !important;
+    color: #2dd06f !important;
+    margin-top: 5% !important;
+    padding: 3% 8% !important;
+}
+
+table {
+    margin: 10px auto;
+}
+
+table td {
+    padding: 5px;
+}
+
+.inner_table td:nth-child(2) {
+    padding-right: 200px;
+}
+
+.promotion_cards {
+    margin: 0px 50px;
+    border-radius: 6%;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat;
+	width: 100%;
+}
+
+.outer {
+	position: relative;
+	height: 350px;
+	width: 550px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+
+#img1 {
+	position: absolute;
+	top: -50px;
+	right: -100px;
+	z-index: 0;
+	animation-delay: 0.5s;
+}
+
+.content {
+	animation-delay: 0.3s;
+	position: absolute;
+	left: 20px;
+	z-index: 3
+}
+
+.heading {
+	color: #111;
+    font-size: 65px;
+}
+
+/*extra*/
+
+.row1{
+    display: flex;
+    flex-direction: row!important;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 50px;
+    padding-right: 50px;
+    border-radius: 25px;
+    width: 200px;
+}
+
+input[type="submit"] {
+    margin-left: -75px;
+    height: 50px;
+    width: 70px;
+    background: pink;
+    color: white;
+    border-radius: 25px;
+    -webkit-appearance: none;
+}
+
+.footer {
+    background-color: black;
+    width: 100%;
+    height: 60px;
+}
