@@ -164,16 +164,10 @@ const Home = () => {
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6} md={6}>
-                            <div className="wrapper">
-                                <div className="outer">
-                                    <div className="content">
-                                        <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Beats Solo Air</h4>
-                                        <h1 style={{ "color": "#ffffff", "font-size": "45px", "margin": "10px" }}>SUMMER SALE</h1>
-                                        <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Company that’s grown from 270 to 480 employees in the last 12 months</h4>
-                                        <Button variant='contained' id="btn1"><a href="./Shop.js" style={{ "textDecoration": "none" }}>Shop</a></Button>
-                                    </div>
-                                </div>
-                            </div>
+                            <h4 style={{ "color": "#ffffff", "margin": "1px 0px 0px 10px" }}>Beats Solo Air</h4>
+                            <h1 style={{ "color": "#ffffff", "font-size": "45px", "margin": "10px" }}>SUMMER SALE</h1>
+                            <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Company that’s grown from 270 to 480 employees in the last 12 months</h4>
+                            <Button variant='contained' id="btn1"><a href="./Shop.js" style={{ "textDecoration": "none" }}>Shop</a></Button>
                         </Grid>
                     </Grid>
                 </Card.Body>
@@ -182,11 +176,11 @@ const Home = () => {
                 <h1>Best Seller Products</h1>
                 <p style={{ "color": "grey" }}>There are many variations passages</p>
             </div>
-            <Grid container style={{ "margin": "50px 25px" }}>
+            <Grid container style={{ "margin": "50px 55px" }}>
                 {Object.entries(bestSellerProducts).map(([item, { name, picture, price }]) => {
                     return (
-                        <Grid item md={3} xs={12} sm={6}>
-                            <Card style={{ "border": "none" }}>
+                        <Grid item md={5} xs={12} sm={5} style={{"margin": "10px 5px"}}>
+                            <Card>
                                 <Card.Img variant="top" src={picture} style={{ "border": "0px solid grey", "borderRadius": "5%" }} />
                                 <Card.Body>
                                     <Card.Title>{name}</Card.Title>
@@ -213,16 +207,10 @@ const Home = () => {
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6} md={6}>
-                            <div className="wrapper">
-                                <div className="outer">
-                                    <div className="content">
-                                        <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Beats Solo Air</h4>
-                                        <h1 style={{ "color": "#ffffff", "font-size": "45px", "margin": "10px" }}>SUMMER SALE</h1>
-                                        <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Company that’s grown from 270 to 480 employees in the last 12 months</h4>
-                                        <Button variant='contained' id="btn1"><a href="./Shop.js" style={{ "textDecoration": "none" }}>Shop</a></Button>
-                                    </div>
-                                </div>
-                            </div>
+                            <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Beats Solo Air</h4>
+                            <h1 style={{ "color": "#ffffff", "font-size": "45px", "margin": "10px" }}>SUMMER SALE</h1>
+                            <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Company that’s grown from 270 to 480 employees in the last 12 months</h4>
+                            <Button variant='contained' id="btn1"><a href="./Shop.js" style={{ "textDecoration": "none" }}>Shop</a></Button>
                         </Grid>
                     </Grid>
                 </Card.Body>
@@ -269,13 +257,13 @@ const Home = () => {
             <div className="footer">
                 <Grid container>
                     <Grid item xs={12} sm={12} md={3}>
-                        <p style={{ "color": "grey","marginLeft":"10px","padding":"10px"}}>© 2021 Phlox Digital Shop. All rights reserved.</p>
+                        <p style={{ "color": "grey", "marginLeft": "10px", "padding": "10px" }}>© 2021 Phlox Digital Shop. All rights reserved.</p>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6}>
                         {' '}
                     </Grid>
                     <Grid item xs={12} sm={12} md={3}>
-                        <p style={{"color":"grey","marginLeft":"10px","padding":"10px"}}>Privacy Policy.Term Condition</p>
+                        <p style={{ "color": "grey", "marginLeft": "10px", "padding": "10px" }}>Privacy Policy.Term Condition</p>
                     </Grid>
                 </Grid>
             </div>
