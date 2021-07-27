@@ -310,3 +310,33 @@ input[type="submit"] {
     width: 100%;
     height: 60px;
 }
+
+@media screen and (max-width: 960px) {
+    .bestSellerCard {
+        margin:0% 25%!important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bestSellerCard {
+        margin:0% 22%!important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .bestSellerCard {
+        margin:0% 15%!important;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .bestSellerCard {
+        margin:0% 10%!important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .bestSellerCard {
+        margin:0% 7%!important;
+    }
+}

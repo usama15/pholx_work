@@ -179,9 +179,9 @@ const Home = () => {
             <Grid container style={{ "margin": "50px 55px" }}>
                 {Object.entries(bestSellerProducts).map(([item, { name, picture, price }]) => {
                     return (
-                        <Grid item md={5} xs={12} sm={5} style={{"margin": "10px 5px"}}>
-                            <Card>
-                                <Card.Img variant="top" src={picture} style={{ "border": "0px solid grey", "borderRadius": "5%" }} />
+                        <Grid item md={3} xs={12} sm={5} style={{"margin": "10px 5px"}}>
+                            <Card style={{"margin":"0% 45%"}} className="bestSellerCard">
+                                <Card.Img variant="top" src={picture} style={{ "borderRadius": "5%" }} width="220"/>
                                 <Card.Body>
                                     <Card.Title>{name}</Card.Title>
                                     <Card.Title style={{ "fontWeight": "bold" }}>{price}</Card.Title>
