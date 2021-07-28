@@ -101,28 +101,29 @@ const Home = () => {
                 <Card className='card6' >
                     <Card.Body>
                         <span className='sub2'>
-                            Enjoy
+                            Play
                         </span>
                         <Card.Title className='sub1'>
-                            With
+                            Game
                         </Card.Title>
                         <span className='sub7'>
-                            EARPHONE
+                            OCULUS
                         </span>
                     </Card.Body>
                     <Button variant='contained' className='btn3'>Browse</Button>
                 </Card>
                 {/*<img className='img2' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/clay-apple-watch-mockup-07.png' alt='watch'/>*/}
+                <img className="img5" src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/P6YUXW1.png" />
                 <Card className='card3' >
                     <Card.Body>
                         <span className='sub2'>
                             New
                         </span>
                         <Card.Title className='sub1'>
-                            Wear
+                            Amazon
                         </Card.Title>
                         <span className='sub4'>
-                            GADGETS
+                            SPEAKER
                         </span>
                     </Card.Body>
                     <Button variant='contained' className='btn1'>Browse</Button>
@@ -151,7 +152,7 @@ const Home = () => {
             <Card className="promotion_cards" style={{ "background-color": "#f42c37", "border": "0px solid #f42c37" }}>
                 <Card.Body>
                     <Grid container>
-                        <Grid item xs={12} sm={12} md={6}>
+                        <Grid item xs={12} sm={6} md={6}>
                             <div className="wrapper">
                                 <div className="outer">
                                     <div className="content">
@@ -159,15 +160,15 @@ const Home = () => {
                                         <h1 style={{ "color": "#ffffff", "font-size": "65px" }}>FINE<br />SALE</h1>
                                         <h4 style={{ "color": "#f87b82" }}>15 Nov to 7 Dec</h4>
                                     </div>
-                                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/2.png" width="350" height="450" id="img1" className="animated fadeInRight"></img>
+                                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/2.png" id="img1"></img>
                                 </div>
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6} md={6}>
-                            <h4 style={{ "color": "#ffffff", "margin": "1px 0px 0px 10px" }}>Beats Solo Air</h4>
+                            <h4 style={{ "color": "#ffffff", "margin": "40px 0px 0px 10px" }}>Beats Solo Air</h4>
                             <h1 style={{ "color": "#ffffff", "font-size": "45px", "margin": "10px" }}>SUMMER SALE</h1>
                             <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Company that’s grown from 270 to 480 employees in the last 12 months</h4>
-                            <Button variant='contained' id="btn1"><a href="./Shop.js" style={{ "textDecoration": "none" }}>Shop</a></Button>
+                            <Button variant='contained' id="btn1"><a href="./Shop.js" style={{ "textDecoration": "none", "color": "#f42c37" }}>Shop</a></Button>
                         </Grid>
                     </Grid>
                 </Card.Body>
@@ -179,10 +180,10 @@ const Home = () => {
             <Grid container style={{ "margin": "50px 55px" }}>
                 {Object.entries(bestSellerProducts).map(([item, { name, picture, price }]) => {
                     return (
-                        <Grid item md={3} xs={12} sm={5} style={{"margin": "10px 5px"}}>
-                            <Card style={{"margin":"0% 45%"}} className="bestSellerCard">
-                                <Card.Img variant="top" src={picture} style={{ "borderRadius": "5%" }} width="220"/>
-                                <Card.Body>
+                        <Grid item md={3} xs={12} sm={5} style={{ "margin": "10px 5px" }}>
+                            <Card style={{ "margin": "0% 45%", "width": "250px" }} className="bestSellerCard">
+                                <Card.Img variant="top" src={picture} style={{ "borderRadius": "5%" }} width="250" height="250" />
+                                <Card.Body style={{ "marginTop": "10px" }}>
                                     <Card.Title>{name}</Card.Title>
                                     <Card.Title style={{ "fontWeight": "bold" }}>{price}</Card.Title>
                                 </Card.Body>
@@ -202,12 +203,12 @@ const Home = () => {
                                         <h1 style={{ "color": "#ffffff", "font-size": "65px" }}>HAPPY<br />HOURS</h1>
                                         <h4 style={{ "color": "grey" }}>15 Nov to 7 Dec</h4>
                                     </div>
-                                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/O6CCQV1.png" width="430" height="450" id="img1" className="animated fadeInRight"></img>
+                                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/O6CCQV1.png" id="img2"></img>
                                 </div>
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6} md={6}>
-                            <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Beats Solo Air</h4>
+                            <h4 style={{ "color": "#ffffff", "margin": "40px 0px 0px 10px" }}>Beats Solo Air</h4>
                             <h1 style={{ "color": "#ffffff", "font-size": "45px", "margin": "10px" }}>SUMMER SALE</h1>
                             <h4 style={{ "color": "#ffffff", "margin": "10px" }}>Company that’s grown from 270 to 480 employees in the last 12 months</h4>
                             <Button variant='contained' id="btn1"><a href="./Shop.js" style={{ "textDecoration": "none" }}>Shop</a></Button>
@@ -217,8 +218,8 @@ const Home = () => {
             </Card>
             <div style={{ "borderTop": "1px solid black", "marginTop": "10px" }}>
                 <Grid container>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <div style={{ "margin": "20px" }}>
+                    <Grid item xs={6} sm={6} md={6}>
+                        <div style={{ "margin": "25px","float":"right"}}>
                             <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/logotype.png" />
                             <p style={{ "color": "grey", "marginTop": "20px" }}>There are many variations<br />passages of Lorem Ipsum<br />available, but the majority have</p>
 
@@ -228,42 +229,13 @@ const Home = () => {
                             <img style={{ "margin": "10px" }} src="data:image/png;base64,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" width="20" height="25" />
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <div style={{ "margin": "20px" }}>
-                            <h4 style={{ "color": "black", "font-weight": "bold" }}>Quick Links</h4>
-                            <a href="/" style={{ "display": "block", "textDecoration": "none", "color": "black", "marginTop": "10px" }}>Home</a>
-                            <a href="/about" style={{ "display": "block", "textDecoration": "none", "color": "black", "marginTop": "10px" }}>About</a>
-                            <a href="/shop" style={{ "display": "block", "textDecoration": "none", "color": "black", "marginTop": "10px" }}>Shop</a>
-                            <a href="/contact" style={{ "display": "block", "textDecoration": "none", "color": "black", "marginTop": "10px" }}>Contact</a>
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <div style={{ "margin": "20px", "width": "220px" }}>
+                    <Grid item xs={6} sm={6} md={6}>
+                        <div style={{ "margin": "25px", "width": "220px","float":"left"}}>
                             <h4 style={{ "color": "black", "font-weight": "bold" }}>Contact</h4>
                             <p style={{ "color": "black", "marginTop": "10px" }}>+99 (0) 101 0000 888 Patricia C.</p>
                             <p style={{ "color": "black", "marginTop": "10px" }}>Amedee 4401 Waldeck Street</p>
                             <p style={{ "color": "black", "marginTop": "10px" }}>Grapevine Nashville, Tx 76051</p>
                         </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <div style={{ "margin": "20px" }}>
-                            <h3 style={{ "color": "black", "font-weight": "bold" }}>Subscribe to our email</h3>
-                            <h1 style={{ "color": "black", "marginTop": "10px" }}>For Latest Updates</h1>
-                            <br /><input type="text" id="ip2" /><input type="submit" value="Subscribe" />
-                        </div>
-                    </Grid>
-                </Grid>
-            </div>
-            <div className="footer">
-                <Grid container>
-                    <Grid item xs={12} sm={12} md={3}>
-                        <p style={{ "color": "grey", "marginLeft": "10px", "padding": "10px" }}>© 2021 Phlox Digital Shop. All rights reserved.</p>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={6}>
-                        {' '}
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={3}>
-                        <p style={{ "color": "grey", "marginLeft": "10px", "padding": "10px" }}>Privacy Policy.Term Condition</p>
                     </Grid>
                 </Grid>
             </div>
