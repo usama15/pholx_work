@@ -35,8 +35,8 @@ const Home = () => {
                 </Card.Body>
                 <Button variant='contained' className='btn'>Shop By Category</Button>
             </Card>
-            <div className='row1'>
-                <img className='img1' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Mask-Group-5-1.png' alt='earphone' />
+            <div className='row1' style={{"margin":"20px"}}>
+                <img src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Mask-Group-5-1.png' alt='earphone' style={{"position":"absolute"}}/>
                 <Card className='card2' >
                     <Card.Body>
                         <span className='sub2'>
@@ -51,7 +51,7 @@ const Home = () => {
                     </Card.Body>
                     <Button variant='contained' className='btn1'>Browse</Button>
                 </Card>
-                <img className='img2' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/clay-apple-watch-mockup-07.png' alt='watch' />
+                <img className='img2' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/clay-apple-watch-mockup-07.png' alt='watch'/>
                 <Card className='card3' >
                     <Card.Body>
                         <span className='sub2'>
