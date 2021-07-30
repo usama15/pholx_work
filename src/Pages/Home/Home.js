@@ -1,23 +1,10 @@
 import React from 'react';
 import { Card } from "react-bootstrap";
-import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid } from "@material-ui/core";
-import './style.css';
-import bestSellerProducts from '../data/bestSellerProducts';
-import recentNews from "../data/recentNews";
-
-const useStyles = makeStyles({
-    root: {
-        flexGrow: 1,
-        margin: 10,
-    },
-    paper: {
-        textAlign: 'center',
-    }
-});
+import './Home.css';
+import bestSellerProducts from '../../data/bestSellerProducts';
 
 const Home = () => {
-    const classes = useStyles();
     return (
         <div>
             <img className='img' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/Group_1271-1.png' alt='headphone' />
