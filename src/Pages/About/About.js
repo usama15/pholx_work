@@ -1,86 +1,27 @@
-import React, { useState } from 'react'
-import "./Shop.css";
-import { Grid } from "@material-ui/core";
-import { Card } from "react-bootstrap";
-import SearchIcon from '@material-ui/icons/Search';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import bestSellerProducts from '../../data/bestSellerProducts';
-import ClearIcon from '@material-ui/icons/Clear';
+import { Grid } from '@material-ui/core'
+import React from 'react';
+import "./About.css";
 
-export const Shop = () => {
-    const [dataExpanded, setDataExpanded] = useState(false);
-    const [products, setProducts] = useState(bestSellerProducts);
-    const [search, setSearch] = useState('');
-    const changeArrow = () => {
-        setDataExpanded(!dataExpanded);
-    }
-    const searchProducts = () => {
-        const prds = [];
-        Object.entries(bestSellerProducts).map(([product, prd]) => {
-            if (prd["name"] == search) {
-                prds.push(prd);
-            }
-        })
-        if (prds.length == 0) {
-            alert("No Product Found");
-        }
-        else {
-            setProducts(prds);
-        }
-    }
-    const resetToDefault = () => {
-        setSearch('');
-        setProducts(bestSellerProducts);
-    }
+export const About = () => {
     return (
         <div>
             <div className="header">
-                <h2>Products</h2>
+                <h2>About</h2>
             </div>
-            <Grid container>
-                <Grid item md="3" sm="12" xs="12">
-                    <div>
-                        <input type="text" id="ip2" value={search} onChange={(e) => setSearch(e.target.value)} style={{ "margin": "50px 0px 50px 5%" }} placeholder="Search Here" />
-                        {search != "" ? <ClearIcon onClick={() => resetToDefault()}/> : null}
-                        <button id="search" onClick={() => searchProducts()}><SearchIcon /></button>
-                    </div>
-                    <h3 style={{ "margin": "0px 10%", "display": "inline" }}>Product Categories</h3>
-                    <button style={{ "background": "white", "border": "none" }} onClick={() => changeArrow()}>{dataExpanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}</button>
-                    {dataExpanded ? (
-                        <div id="dataExpanded" style={{ "textAlign": "center", "margin": "30px" }}>
-                            <p>Earphone</p>
-                            <p>Gadgets</p>
-                            <p>Gaming</p>
-                            <p>Headphone</p>
-                            <p>Laptop</p>
-                            <p>Speaker</p>
-                            <p>Uncategorized</p>
-                        </div>
-                    ) : null}
-                    <button id="filter">Filter</button>
-                </Grid>
-                <Grid item md="9" sm="12" xs="12">
-                    <h1 style={{ "margin": "50px 0px 0px 15%", "textAlign": "center" }}>Shop</h1>
-                    <Grid container style={{ "margin": "0px 0px 50px 10%" }} spacing={4}>
-                        {Object.entries(products).map(([item, { name, picture, price }]) => {
-                            return (
-                                <Grid item md={3} xs={12} sm={5} style={{ "margin": "10px 0px 10px 30px" }}>
-                                    <Card>
-
-                                        <Card.Img variant="top" src={picture} style={{ "borderRadius": "5%" }} width="250" height="250" />
-                                        <Card.Body style={{ "marginTop": "10px" }}>
-                                            <Card.Title>{name}</Card.Title>
-                                            <Card.Title style={{ "fontWeight": "bold" }}>{price}</Card.Title>
-                                        </Card.Body>
-
-                                    </Card>
-                                </Grid>
-                            )
-                        })}
+            <div style={{ "margin": "50px" }}>
+                <Grid container>
+                    <Grid item md={6} sm={6} xs={12} id="info">
+                        <h4 style={{ "color": "#f42f3a" }}>Welcome To Pholx</h4>
+                        <h1>Who We are?</h1>
+                        <p>When, while the lovely valley teems with vapour around me, and the<br />meridian sun strikes the upper surface of the impenetrable foliage of my<br />trees, and but a few stray</p>
+                        <p>gleams steal into the inner sanctuary, I throw myself down among the tall<br />grass by the trickling stream; and, as I lie close to the earth, a thousand<br /> unknown plants are noticed by me .<br />
+                            when I hear the buzz of the little world among the stalks, and grow familiar<br />with the countless indescribable forms of the insects and flies, then I feel<br />the presence .</p>
+                    </Grid>
+                    <Grid item md={6} sm={6} xs={12}>
+                        <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/group-of-young-businesspeople-with-laptop-working-8SHTZUN.jpg" width="650" style={{ "borderRadius": "10px" }} />
                     </Grid>
                 </Grid>
-            </Grid>
+            </div>
             <div style={{ "borderTop": "1px solid black", "marginTop": "10px" }}>
                 <Grid container>
                     <Grid item xs={6} sm={6} md={6}>
@@ -104,6 +45,6 @@ export const Shop = () => {
                     </Grid>
                 </Grid>
             </div>
-        </div >
+        </div>
     )
 }
