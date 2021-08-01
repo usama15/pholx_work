@@ -1,0 +1,22 @@
+#contact_info * {
+    margin: 10px 0px;
+}
+
+#contact_form input[type="text"],
+#contact_form input[type="email"],
+#contact_form textarea {
+    width: 80%;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #efefef;
+    margin: 10px 10px;
+}
+
+input[type="submit"] {
+    width: 30%!important;
+    height: 35px!important;
+    background-color: #f42c37;
+    border-radius: 10px;
+    margin: 0px 25%!important;
+    color: white;
+}

@@ -7,7 +7,7 @@ import {
 import Navbar from './component/Navbar';
 import Home from "./Pages/Home/Home";
 import {About} from "./Pages/About/About";
-import Contact from "./Pages/Contact";
+import Contact from "./Pages/Contact/Contact";
 import {Shop} from "./Pages/Shop/Shop";
 import {MuiThemeProvider} from "@material-ui/core";
 import theme from "./theme";
