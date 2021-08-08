@@ -7,115 +7,101 @@ import bestSellerProducts from '../../data/bestSellerProducts';
 const Home = () => {
     return (
         <div>
-            <img className='img' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/Group_1271-1.png' alt='headphone' />
-            <Card className='card1' >
-                <Card.Body>
-                    <span className='title2'>
-                        Beats Solo
-                    </span>
-                    <Card.Title className='title1'>
-                        Wireless
-                    </Card.Title>
-                    <span className='title3'>
-                        HEADPHONE
-                    </span>
-                </Card.Body>
-                <Button variant='contained' className='btn'>Shop By Category</Button>
-            </Card>
-            <div className='row1' style={{"margin":"20px"}}>
-                <img src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Mask-Group-5-1.png' alt='earphone' style={{"position":"absolute"}}/>
-                <Card className='card2' >
-                    <Card.Body>
-                        <span className='sub2'>
-                            Enjoy
-                        </span>
-                        <Card.Title className='sub1'>
-                            With
-                        </Card.Title>
-                        <span className='sub3'>
-                            EARPHONE
-                        </span>
-                    </Card.Body>
-                    <Button variant='contained' className='btn1'>Browse</Button>
-                </Card>
-                <img className='img2' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/clay-apple-watch-mockup-07.png' alt='watch'/>
-                <Card className='card3' >
-                    <Card.Body>
-                        <span className='sub2'>
-                            New
-                        </span>
-                        <Card.Title className='sub1'>
-                            Wear
-                        </Card.Title>
-                        <span className='sub4'>
-                            GADGETS
-                        </span>
-                    </Card.Body>
-                    <Button variant='contained' className='btn1'>Browse</Button>
-                </Card>
-                <img className='img3' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Laptop.png' alt='laptop' />
-                <Card className='card4' >
-                    <Card.Body>
-                        <span className='sub2'>
-                            Trend
-                        </span>
-                        <Card.Title className='sub1'>
-                            Devices
-                        </Card.Title>
-                        <span className='sub5'>
-                            LAPTOP
-                        </span>
-                    </Card.Body>
-                    <Button variant='contained' className='btn2'>Browse</Button>
-                </Card>
-            </div>
-            <div className='row1'>
-                <img className='img4' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/NicePng_ps4-png_193822.png' alt='game device' />
-                <Card className='card5' >
-                    <Card.Body>
-                        <span className='sub2'>
-                            Best
-                        </span>
-                        <Card.Title className='sub1'>
-                            Gaming
-                        </Card.Title>
-                        <span className='sub6'>
-                            CONSOLE
-                        </span>
-                    </Card.Body>
-                    <Button variant='contained' className='btn1'>Browse</Button>
-                </Card>
-                <Card className='card6' >
-                    <Card.Body>
-                        <span className='sub2'>
-                            Play
-                        </span>
-                        <Card.Title className='sub1'>
-                            Game
-                        </Card.Title>
-                        <span className='sub7'>
-                            OCULUS
-                        </span>
-                    </Card.Body>
-                    <Button variant='contained' className='btn3'>Browse</Button>
-                </Card>
-                {/*<img className='img2' src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/clay-apple-watch-mockup-07.png' alt='watch'/>*/}
-                <img className="img5" src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/P6YUXW1.png" />
-                <Card className='card3' >
-                    <Card.Body>
-                        <span className='sub2'>
-                            New
-                        </span>
-                        <Card.Title className='sub1'>
-                            Amazon
-                        </Card.Title>
-                        <span className='sub4'>
-                            SPEAKER
-                        </span>
-                    </Card.Body>
-                    <Button variant='contained' className='btn1'>Browse</Button>
-                </Card>
-            </div>
+            <Grid container style={{ "margin": "5% 10%", "width": "80%", "border": "1px solid black", "borderRadius": "20px", "backgroundColor": "#dedcdc" }}>
+                <Grid item md={1} sm={1} xs={1}></Grid>
+                <Grid item md={5} sm={5} xs={5} style={{ "margin": "5% 0px 5% 0px" }}>
+                    <span style={{ "font-size": "32px", "font-weight": "600" }}>Beats Solo</span><br />
+                    <span style={{ "fontSize": "80px", "marginBottom": "40px", "fontWeight": "700", "lineHeight": "100px" }} id="text2">Wireless</span><br />
+                    <span style={{ "fontSize": "900%", "lineHeight": "98px", "fontWeight": "900", "color": "white", "marginRight": "50%!important", "height": "100%" }} id="text1">Headphones</span>
+                    <Button variant='contained' className='btn' style={{ "height": "50px" }}>Shop By Category</Button>
+                </Grid>
+                <Grid item md={5} sm={5} xs={5}>
+                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/Group_1271-1.png" style={{ "width": "150%", "height": "110%", "float": "right" }} />
+                </Grid>
+                <Grid item md={1} sm={1} xs={1}></Grid>
+            </Grid>
+            <Grid container style={{ "margin": "5% 5%", "width": "90%" }}>
+                <Grid item md={3} sm={6} xs={12}>
+                    <Grid container style={{ "width": "95%", "border": "1px solid black", "height": "400px", "backgroundColor": "#1f1d1d", "borderRadius": "10px", "marginTop": "10%" }}>
+                        <Grid item md={6} sm={6} xs={6} style={{ "marginTop": "40px" }}>
+                            <span style={{ "font-size": "32px", "font-weight": "600", "color": "white" }}>Enjoy</span><br />
+                            <span style={{ "fontSize": "60px", "marginBottom": "40px", "fontWeight": "700", "lineHeight": "100px", "color": "white" }}>With</span><br />
+                            <span style={{ "fontSize": "250%", "lineHeight": "98px", "fontWeight": "900", "color": "#454343", "marginRight": "50%!important" }}>Earphone</span>
+                            <Button variant='contained' style={{ "height": "50px", "backgroundColor": "#f42c37", "color": "white", "borderRadius": "30px" }}>Browse</Button>
+                        </Grid>
+                        <Grid item md={6} sm={6} xs={6}>
+                            <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Mask-Group-5-1.png" style={{ "width": "120px", "height": "300px", "float": "right" }} id="img1" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item md={3} sm={6} xs={12}>
+                    <Grid container style={{ "width": "95%", "border": "1px solid black", "height": "400px", "backgroundColor": "#1479ff", "borderRadius": "10px", "marginTop": "10%" }}>
+                        <Grid item md={6} sm={6} xs={6} style={{ "marginTop": "40px" }}>
+                            <span style={{ "font-size": "32px", "font-weight": "600", "color": "white" }}>New</span><br />
+                            <span style={{ "fontSize": "60px", "marginBottom": "40px", "fontWeight": "700", "lineHeight": "100px", "color": "white" }}>Wear</span><br />
+                            <span style={{ "fontSize": "250%", "lineHeight": "98px", "fontWeight": "900", "color": "#3a98ff", "marginRight": "50%!important" }}>Gadgets</span>
+                            <Button variant='contained' style={{ "height": "50px", "backgroundColor": "#f42c37", "color": "white", "borderRadius": "30px" }}>Browse</Button>
+                        </Grid>
+                        <Grid item md={6} sm={6} xs={6}>
+                            <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/clay-apple-watch-mockup-07.png" style={{ "width": "150px", "height": "300px", "float": "right" }} id="img2" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item md={6} sm={12} xs={12}>
+                    <Grid container style={{ "width": "95%", "border": "1px solid black", "height": "400px", "backgroundColor": "#1f1d1d", "borderRadius": "10px", "marginTop": "5%" }}>
+                        <Grid item md={6} sm={6} xs={6} style={{ "marginTop": "40px" }}>
+                            <span style={{ "font-size": "32px", "font-weight": "600", "color": "white" }}>Enjoy</span><br />
+                            <span style={{ "fontSize": "60px", "marginBottom": "40px", "fontWeight": "700", "lineHeight": "100px", "color": "white" }}>New</span><br />
+                            <span style={{ "fontSize": "250%", "lineHeight": "98px", "fontWeight": "900", "color": "#454343", "marginRight": "50%!important" }}>Earphone</span><br />
+                            <Button variant='contained' style={{ "height": "50px", "backgroundColor": "white", "color": "#f42c37", "borderRadius": "30px" }}>Browse</Button>
+                        </Grid>
+                        <Grid item md={6} sm={6} xs={6}>
+                            <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Laptop.png" style={{ "width": "300px", "height": "450px", "float": "right" }} />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid container style={{ "margin": "5% 5%", "width": "90%" }}>
+                <Grid item md={6} sm={12} xs={12}>
+                    <Grid container style={{ "width": "95%", "border": "1px solid black", "height": "400px", "backgroundImage": "linear-gradient(180deg,#edeced 0%,#eef0f3 100%)", "borderRadius": "10px", "marginTop": "5%" }}>
+                        <Grid item md={6} sm={6} xs={6} style={{ "marginTop": "40px" }}>
+                            <span style={{ "font-size": "32px", "font-weight": "600", "color": "black" }}>Best</span><br />
+                            <span style={{ "fontSize": "60px", "marginBottom": "40px", "fontWeight": "700", "lineHeight": "100px", "color": "black" }}>Gaming</span><br />
+                            <span style={{ "fontSize": "250%", "lineHeight": "98px", "fontWeight": "900", "color": "white", "marginRight": "50%!important" }}>Console</span><br />
+                            <Button variant='contained' style={{ "height": "50px", "backgroundColor": "#f42c37", "color": "white", "borderRadius": "30px" }}>Browse</Button>
+                        </Grid>
+                        <Grid item md={6} sm={6} xs={6}>
+                            <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/NicePng_ps4-png_193822.png" style={{ "width": "210px", "height": "250px", "float": "right", "marginTop": "60px" }} id="img6" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item md={3} sm={6} xs={12}>
+                    <Grid container style={{ "width": "95%", "border": "1px solid black", "height": "400px", "backgroundColor": "#2dd06f", "borderRadius": "10px", "marginTop": "10%" }}>
+                        <Grid item md={6} sm={6} xs={6} style={{ "marginTop": "40px" }}>
+                            <span style={{ "font-size": "32px", "font-weight": "600", "color": "white" }}>Play</span><br />
+                            <span style={{ "fontSize": "60px", "marginBottom": "40px", "fontWeight": "700", "lineHeight": "100px", "color": "white" }}>Game</span><br />
+                            <span style={{ "fontSize": "250%", "lineHeight": "98px", "fontWeight": "900", "color": "#57d68b", "marginRight": "50%!important" }}>Oculus</span><br />
+                            <Button variant='contained' style={{ "height": "50px", "backgroundColor": "white", "color": "#2dd06f", "borderRadius": "30px" }}>Browse</Button>
+                        </Grid>
+                        <Grid item md={6} sm={6} xs={6}>
+                            <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/man-wearing-virtual-reality-headset-at-home-D7AYCTV-2.png" style={{ "width": "150px", "height": "235px", "float": "right", "marginTop": "160px" }} id="img7" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item md={3} sm={6} xs={12}>
+                    <Grid container style={{ "width": "95%", "border": "1px solid black", "height": "400px", "backgroundColor": "#1f1d1d", "borderRadius": "10px", "marginTop": "10%" }}>
+                        <Grid item md={6} sm={6} xs={6} style={{ "marginTop": "40px" }}>
+                            <span style={{ "font-size": "32px", "font-weight": "600", "color": "white" }}>New</span><br />
+                            <span style={{ "fontSize": "60px", "marginBottom": "40px", "fontWeight": "700", "lineHeight": "100px", "color": "white" }}>Amazon</span><br />
+                            <span style={{ "fontSize": "250%", "lineHeight": "98px", "fontWeight": "900", "color": "#454343", "marginRight": "50%!important" }}>Speaker</span><br />
+                            <Button variant='contained' style={{ "height": "50px", "backgroundColor": "#f42c37", "color": "white", "borderRadius": "30px" }}>Browse</Button>
+                        </Grid>
+                        <Grid item md={6} sm={6} xs={6}>
+                            <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/P6YUXW1.png" style={{ "width": "200px", "height": "210px", "float": "right", "marginTop": "200px" }} id="img8" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
             <table className="outer_table">
                 <tr>
                     <td>
@@ -147,7 +133,7 @@ const Home = () => {
                                         <h1 style={{ "color": "#ffffff", "font-size": "65px" }}>FINE<br />SALE</h1>
                                         <h4 style={{ "color": "#f87b82" }}>15 Nov to 7 Dec</h4>
                                     </div>
-                                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/2.png" id="img1"></img>
+                                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/2.png" id="img3"></img>
                                 </div>
                             </div>
                         </Grid>
@@ -190,7 +176,7 @@ const Home = () => {
                                         <h1 style={{ "color": "#ffffff", "font-size": "65px" }}>HAPPY<br />HOURS</h1>
                                         <h4 style={{ "color": "grey" }}>15 Nov to 7 Dec</h4>
                                     </div>
-                                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/O6CCQV1.png" id="img2"></img>
+                                    <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/O6CCQV1.png" id="img4"></img>
                                 </div>
                             </div>
                         </Grid>
@@ -206,7 +192,7 @@ const Home = () => {
             <div style={{ "borderTop": "1px solid black", "marginTop": "10px" }}>
                 <Grid container>
                     <Grid item xs={6} sm={6} md={6}>
-                        <div style={{ "margin": "25px","float":"right"}}>
+                        <div style={{ "margin": "25px", "float": "right" }}>
                             <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/logotype.png" />
                             <p style={{ "color": "grey", "marginTop": "20px" }}>There are many variations<br />passages of Lorem Ipsum<br />available, but the majority have</p>
 
@@ -217,7 +203,7 @@ const Home = () => {
                         </div>
                     </Grid>
                     <Grid item xs={6} sm={6} md={6}>
-                        <div style={{ "margin": "25px", "width": "220px","float":"left"}}>
+                        <div style={{ "margin": "25px", "width": "220px", "float": "left" }}>
                             <h4 style={{ "color": "black", "font-weight": "bold" }}>Contact</h4>
                             <p style={{ "color": "black", "marginTop": "10px" }}>+99 (0) 101 0000 888 Patricia C.</p>
                             <p style={{ "color": "black", "marginTop": "10px" }}>Amedee 4401 Waldeck Street</p>
