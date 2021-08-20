@@ -334,6 +334,7 @@ table td {
     .bestSellerCard {
         margin:0% 22%!important;
     }
+    
 }
 
 @media screen and (max-width: 588px) {
@@ -372,6 +373,26 @@ table td {
     .bestSellerCard {
         margin:0% 7%!important;
     }
+}
+
+@media screen and (max-width: 380px) {
+  .bestSellerCard {
+      margin:0% 5%!important;
+  }
+
+  .bestSeller {
+    margin:50px 30px!important;
+}
+}
+
+@media screen and (max-width: 420px) {
+  .bestSellerCard {
+      margin:0% 3%!important;
+  }
+
+  .bestSeller {
+    margin:50px 60px!important;
+}
 }
 
 @media screen and (max-width:675px) {
@@ -453,18 +474,6 @@ table td {
   @media screen and (max-width:640px) {
     #text2 {
       font-size: 50px!important;
-    }
-  }
-  
-  @media screen and (max-width:960px) {
-    #img1 {
-      width: 300px!important;
-      height: 325px!important;
-    }
-  
-    #img2 {
-      width: 185px!important;
-      height: 325px!important;
     }
   }
   
@@ -552,40 +561,10 @@ table td {
     }
   }
   
-  @media screen and (max-width:960px) {
-    #img1 {
-      width: 300px!important;
-      height: 325px!important;
-    }
-  
-    #img2 {
-      width: 185px!important;
-      height: 325px!important;
-    }
-  }
-  
   @media screen and (max-width:605px) {
     #img5 {
       width: 150px!important;
       height: 400px!important;
-    } 
-  
-    #img6 {
-      width: 100px!important;
-      height: 200px!important;
-      margin-top: 100px!important;
-    } 
-  
-    #img7 {
-      margin-top: 0px!important;
-      height: 400px!important;
-      width: 200px!important;
-    }
-  
-    #img8 {
-      margin-top: 0px!important;
-      height: 430px!important;
-      width: 200px!important;
     }
   }
   
