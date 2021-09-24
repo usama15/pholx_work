@@ -1,0 +1,238 @@
+.card-content h6 {
+    font-size: 19px;
+}
+
+.card-content h3 {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 55px;
+}
+
+.short-card,.long-card {
+    position:relative;
+    height: 350px;
+    margin-top: 10px;
+    border-radius: 25px;
+  }
+  
+  .first-row,.second-row {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  
+  #card1 {
+    background-color: rgb(34,34,34);
+    width: 24%;
+  }
+  
+  #card4 {
+    background-color: #178bff;
+    width: 24%;
+  }
+  
+  #card3 {
+    background-color: #2DD06F;
+    width: 24%;
+  }
+  
+  .card-content {
+    margin: 140px 30px;
+    font-family: poppins,sans-serif!important;
+    color: white;
+  }
+  
+  #longCard2 .card-content {
+    margin: 80px 30px;
+    color: black;
+  }
+  
+  #card3 .card-content,#card4 .card-content {
+    margin: 50px 30px;
+  }
+  
+  #longCard2 p {
+    color: #FFFFFF;
+  }
+  
+  #card3 p {
+    color: #57D68b;
+  }
+  
+  #card4 p {
+    color: #3A98ff;
+  }
+  
+  #card4 button {
+    color: #178bff;
+  }
+  
+  .card-content h3 {
+    
+    /* font-family: montserrat,sans-serif!important; */
+  }
+  
+  .card-content p {
+    font-size: 43px;
+    font-weight: 900;
+    line-height: 20px!important;
+  }
+  
+  .card-content button {
+    border-radius: 1200px;
+    padding: 10px 30px;
+    margin-top: 20px;
+  }
+  
+  #card2 button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(254,198,46);;
+  }
+  
+  #card3 button {
+    background-color: rgb(255, 255, 255);
+    color: #2DD06F;
+  }
+  
+  #longCard1 button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(244,44,55);
+  }
+  
+  .button1 {
+    background-color: rgb(244,44,55) !important;
+    color: white;
+  }
+  
+  #img1 {
+    position: absolute;
+    top: -50px;
+    right: 0px;
+    width: 370px;
+    height: 390px;
+  }
+  
+  #img2 {
+    position: absolute;
+    top: 10px;
+    right: -115px;
+    width: 414px;
+    height: 276px;
+  }
+  
+  #img3 {
+    position: absolute;
+    top: 0px;
+    right: -110px;
+    width: 498px;
+    height: 341px;
+    overflow: hidden;
+  }
+  
+  #img4 {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    width: 275px;
+    height: 250px;
+  }
+  
+  #img5 {
+    position: absolute;
+    top: 136px;
+    right: 0px;
+    width: 323px;
+    height: 214px;
+  }
+  
+  #img6 {
+    position: absolute;
+    top: 175px;
+    right: 0px;
+    width: 271px;
+    height: 181px;
+  }
+  
+  #card1 p {
+    color: rgb(68,68,68);
+  }
+  
+  #card2 {
+    background-color: rgb(254,198,46);
+    width: 24%;
+  }
+  
+  #card2 p {
+    color: #FFD76A;
+  }
+  
+  #longCard1 p {
+    color: #f6565f;
+  }
+  
+  #longCard1 {
+    background-color: rgb(244,44,55);
+    width: 49%;
+    overflow: hidden;
+  }
+  
+  #longCard2 {
+    background-color: #EDECED;
+    width: 49%;
+  }
+  
+  @media screen and (max-width:1020px) {
+    #longCard1,#longCard2 {
+      display: block;
+      width: 99%;
+    }
+    #card1 {
+      width: 49%;
+    }
+    #card2 {
+      background-color: rgb(254,198,46);
+      width: 49%;
+      overflow: hidden;
+    }
+    #card3 {
+      width: 49%;
+    }
+    #card4 {
+      width: 49%;
+    }
+  }
+  
+  @media screen and (max-width:765px) {
+    .short-card,.long-card {
+      display: block;
+      width: 99%!important;
+    }
+  }
+  
+  @media screen and (max-width: 415px) {
+    #img4 {
+      width: 250px;
+      height: 225px;
+      top: 75px;
+    }
+  }
+  
+  @media screen and (max-width: 395px) {
+    #img4 {
+      width: 225px;
+      height: 200px;
+      top: 100px;
+    }
+  }
+  
+  
+  @media screen and (max-width: 375px) {
+  
+    #img4 {
+      width: 200px;
+      height: 175px;
+      top: 125px;
+    }
+  }

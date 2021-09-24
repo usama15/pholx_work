@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme) => ({
         },
     },
     title: {
-        display: 'none',
+        // display: 'none',
         [theme.breakpoints.up('sm')]: {
             display: 'block',
             color:'black',
@@ -65,7 +65,7 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         flex: 1,
 
-        ['@media (max-width: 780px)']: {
+        ['@media (max-width: 600px)']: {
             backgroundColor: 'lightblue',
             // display: 'block',
             display: 'flex',
@@ -76,13 +76,14 @@ export const useStyles = makeStyles((theme) => ({
             width: '100%',
             left: 0,
             transform: 'translateY(100%)',
-            transition: 'all 0.5s ease-in-out'
+            transition: 'all 0.5s ease-in-out',
+            zIndex: "10!important",
         }
     },
     listItem: {
         margin: '0px 30px',
 
-        ['@media (max-width: 780px)']: {
+        ['@media (max-width: 600px)']: {
             margin: '0px',
             width: '100%',
             display: 'flex',
@@ -97,7 +98,7 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     linkText: {
-        ['@media (max-width: 780px)']: {
+        ['@media (max-width: 600px)']: {
             fontSize: '30px',
             color: 'black',
             fontWeight: 'bold',
@@ -115,7 +116,7 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         flex: 1,
 
-        ['@media (max-width: 780px)']: {
+        ['@media (max-width: 600px)']: {
             backgroundColor: 'lightblue',
             // display: 'block',
             display: 'flex',
@@ -126,7 +127,8 @@ export const useStyles = makeStyles((theme) => ({
             width: '100%',
             left: 0,
             transform: 'translateY(0)',
-            transition: 'all 0.5s ease-in-out'
+            transition: 'all 0.5s ease-in-out',
+            zIndex: "10!important",
         }
     },
 }));

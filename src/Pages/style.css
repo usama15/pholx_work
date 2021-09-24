@@ -41,6 +41,7 @@
 #btn1 {
     background-color: #ffffff!important;
     border-radius: 30px!important;
+    color: #f42c37!important;
     margin: 2% !important;
     padding: 1.2% !important;
     width: 100px!important;
@@ -59,7 +60,7 @@
     border-radius: 20px;
     box-sizing: border-box;
     hyphens: manual;
-    width: 339px;
+    width: 23%;
     margin-left:3%;
     height: 23em !important;
     padding: 11% 4% 4% 2.5%;
@@ -74,7 +75,7 @@
 }
 
 .sub2{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     color: white;
     /*margin-bottom: 8%;*/
@@ -87,6 +88,16 @@
     color: #454343;
 }
 
+.btn1 {
+    position: absolute;
+    background-color: #f42c37 !important;
+    border-radius: 30px !important;
+    color: white !important;
+    margin-top: 5% !important;
+    padding: 3% 8% !important;
+}
+
+
 .img1{
     position: absolute;
     margin: 0% 0 0 0 ;
@@ -98,22 +109,22 @@
     border-radius: 20px;
     box-sizing: border-box;
     hyphens: manual;
-    width: 339px;
+    width: 23%;
     margin-left:3%;
     height: 23em !important;
     padding: 11% 4% 4% 2.5%;
-    background-color: #1479ff;
+    background-color: #f8bf24;
 }
 .sub4{
     font-size: 44px;
     line-height: 18px;
     font-weight: 900;
-    color: #3a98ff;
+    color: #ffd76a;
 }
 
 .img2{
     position: absolute;
-    margin: 5% 0 0 32% ;
+    margin: 2% 0 0 29% ;
 }
 
 /*card 4*/
@@ -123,7 +134,7 @@
     border-radius: 20px;
     box-sizing: border-box;
     hyphens: manual;
-    width: 570px;
+    width: 42%;
     margin-left:3%;
     height: 23em !important;
     padding: 11% 4% 4% 2.5%;
@@ -180,12 +191,6 @@
     margin: 5% 0 0 22% ;
 }
 
-.img5{
-    height: auto;
-    width: 25%;
-    position: absolute;
-    margin: 14% 0 0 78% ;
-}
 /*card 6*/
 .card6{
      margin-top: 2%;
@@ -225,17 +230,16 @@ table {
 }
 
 table td {
-    padding: 10px;
+    padding: 5px;
 }
 
 .inner_table td:nth-child(2) {
-    padding-right: 100px;
+    padding-right: 200px;
 }
 
 .promotion_cards {
-    margin: 2% 10%;
-    border-radius: 20px;
-    width: 80%;
+    margin: 0px 50px;
+    border-radius: 6%;
 }
 
 .wrapper {
@@ -255,10 +259,18 @@ table td {
 	align-items: center;
 }
 
+#img1 {
+	position: absolute;
+	top: -90px;
+	right: -100px;
+	z-index: 0;
+	animation-delay: 0.5s;
+}
 
 .content {
 	animation-delay: 0.3s;
 	position: absolute;
+    top: 6px;
 	left: 30px;
 	z-index: 3
 }
@@ -275,31 +287,28 @@ table td {
     flex-direction: row!important;
 }
 
+input[type="text"] {
+    width: 200px;
+    height: 50px;
+    padding-right: 50px;
+    border-radius: 25px;
+    width: 200px;
+}
+
+input[type="submit"] {
+    margin-left: -75px;
+    height: 50px;
+    width: 70px;
+    background: pink;
+    color: white;
+    border-radius: 25px;
+    -webkit-appearance: none;
+}
 
 .footer {
     background-color: black;
     width: 100%;
     height: 60px;
-}
-
-#img7 {
-	position: absolute;
-	top: -100px;
-	right: -210px;
-	z-index: 0;
-	animation-delay: 0.5s;
-    width: 610px;
-    height: 470px;
-}
-
-#img8 {
-	position: absolute;
-	top: -90px;
-	right: -75px;
-	z-index: 0;
-	animation-delay: 0.5s;
-    width: 430px;
-    height: 450px;
 }
 
 @media screen and (max-width: 960px) {
@@ -308,48 +317,15 @@ table td {
     }
 }
 
-@media screen and (max-width: 738px) {
-    .inner_table td:nth-child(2) {
-        padding-right: 50px;
-    }
-}
-
-@media screen and (max-width: 638px) {
-    .inner_table td:nth-child(2) {
-        padding-right: 25px;
-    }
-}
-
 @media screen and (max-width: 600px) {
     .bestSellerCard {
         margin:0% 22%!important;
-    }
-    
-}
-
-@media screen and (max-width: 588px) {
-    .inner_table td:nth-child(2) {
-        padding-right: 13px;
-    }
-}
-
-@media screen and (max-width: 563px) {
-    .inner_table td:nth-child(2) {
-        font-size: 13px;
-        padding-right: 7px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .bestSellerCard {
         margin:0% 15%!important;
-    }
-}
-
-@media screen and (max-width: 489px) {
-    .inner_table td:nth-child(2) {
-        font-size: 12px;
-        padding-right: 4px;
     }
 }
 
@@ -364,225 +340,3 @@ table td {
         margin:0% 7%!important;
     }
 }
-
-@media screen and (max-width: 380px) {
-  .bestSellerCard {
-      margin:0% 5%!important;
-  }
-
-  .bestSeller {
-    margin:50px 30px!important;
-}
-}
-
-@media screen and (max-width: 420px) {
-  .bestSellerCard {
-      margin:0% 3%!important;
-  }
-
-  .bestSeller {
-    margin:50px 60px!important;
-}
-}
-
-@media screen and (max-width:675px) {
-    #text1 {
-      font-size: 400%!important;
-    }
-  
-  
-  }
-  
-  @media screen and (max-width:545px) {
-    #text1 {
-      font-size: 300%!important;
-    }
-  }
-  
-  @media screen and (max-width:435px) {
-    #text1 {
-      font-size: 200%!important;
-    }
-  
-    #text2 {
-      font-size: 50px!important;
-    }
-  }
-  
-  @media screen and (max-width:280px) {
-    #text1 {
-      font-size: 150%!important;
-    }
-  
-    #text2 {
-      font-size: 36px!important;
-    }
-  }
-
-  @media screen and (max-width:1210px) {
-    #text1 {
-      font-size: 800%!important;
-    }
-  }
-  
-  @media screen and (max-width:1075px) {
-    #text1 {
-      font-size: 700%!important;
-    }
-  }
-  
-  @media screen and (max-width:940px) {
-    #text1 {
-      font-size: 600%!important;
-    }
-  }
-  
-  @media screen and (max-width:850px) {
-    #text2 {
-      font-size: 70px!important;
-    }
-  }
-  
-  @media screen and (max-width:805px) {
-    #text1 {
-      font-size: 500%!important;
-    }
-  }
-  
-  @media screen and (max-width:745px) {
-    #text2 {
-      font-size: 60px!important;
-    }
-  }
-  
-  @media screen and (max-width:675px) {
-    #text1 {
-      font-size: 400%!important;
-    }
-  }
-  
-  @media screen and (max-width:640px) {
-    #text2 {
-      font-size: 50px!important;
-    }
-  }
-  
-  @media screen and (max-width:545px) {
-    #text1 {
-      font-size: 300%!important;
-    }
-  }
-  
-  @media screen and (max-width:530px) {
-    #text2 {
-      font-size: 40px!important;
-    }
-  }
-  
-  @media screen and (max-width:435px) {
-    #text2 {
-      font-size: 30px!important;
-    }
-  }
-  
-  @media screen and (max-width:410px) {
-    #text1 {
-      font-size: 200%!important;
-    }
-  }
-  
-  @media screen and (max-width:325px) {
-    #text2 {
-      font-size: 20px!important;
-    }
-  }
-  
-  @media screen and (max-width:275px) {
-    #text1 {
-      font-size: 150%!important;
-    }
-  }
-
-  @media screen and (max-width:1210px) {
-    #text1 {
-      font-size: 800%!important;
-    }
-  }
-  
-  @media screen and (max-width:1075px) {
-    #text1 {
-      font-size: 700%!important;
-    }
-  }
-  
-  @media screen and (max-width:940px) {
-    #text1 {
-      font-size: 600%!important;
-    }
-  }
-  
-  @media screen and (max-width:850px) {
-    #text2 {
-      font-size: 70px!important;
-    }
-  }
-  
-  @media screen and (max-width:805px) {
-    #text1 {
-      font-size: 500%!important;
-    }
-  }
-  
-  @media screen and (max-width:745px) {
-    #text2 {
-      font-size: 60px!important;
-    }
-  }
-  
-  @media screen and (max-width:675px) {
-    #text1 {
-      font-size: 400%!important;
-    }
-  }
-  
-  @media screen and (max-width:640px) {
-    #text2 {
-      font-size: 50px!important;
-    }
-  }
-  
-  @media screen and (max-width:545px) {
-    #text1 {
-      font-size: 300%!important;
-    }
-  }
-  
-  @media screen and (max-width:530px) {
-    #text2 {
-      font-size: 40px!important;
-    }
-  }
-  
-  @media screen and (max-width:435px) {
-    #text2 {
-      font-size: 30px!important;
-    }
-  }
-  
-  @media screen and (max-width:410px) {
-    #text1 {
-      font-size: 200%!important;
-    }
-  }
-  
-  @media screen and (max-width:325px) {
-    #text2 {
-      font-size: 20px!important;
-    }
-  }
-  
-  @media screen and (max-width:275px) {
-    #text1 {
-      font-size: 150%!important;
-    }
-  }
