@@ -13,6 +13,8 @@
     height: 350px;
     margin-top: 10px;
     border-radius: 25px;
+    
+    overflow: hidden;
   }
   
   .first-row,.second-row {
@@ -69,11 +71,6 @@
     color: #178bff;
   }
   
-  .card-content h3 {
-    
-    /* font-family: montserrat,sans-serif!important; */
-  }
-  
   .card-content p {
     font-size: 43px;
     font-weight: 900;
@@ -81,8 +78,8 @@
   }
   
   .card-content button {
-    border-radius: 1200px;
-    padding: 10px 30px;
+    /* border-radius: 1200px; */
+    /* padding: 10px 30px; */
     margin-top: 20px;
   }
   
@@ -120,6 +117,7 @@
     right: -115px;
     width: 414px;
     height: 276px;
+    float: left;
   }
   
   #img3 {
@@ -128,7 +126,6 @@
     right: -110px;
     width: 498px;
     height: 341px;
-    overflow: hidden;
   }
   
   #img4 {
@@ -175,7 +172,6 @@
   #longCard1 {
     background-color: rgb(244,44,55);
     width: 49%;
-    overflow: hidden;
   }
   
   #longCard2 {
@@ -194,7 +190,6 @@
     #card2 {
       background-color: rgb(254,198,46);
       width: 49%;
-      overflow: hidden;
     }
     #card3 {
       width: 49%;

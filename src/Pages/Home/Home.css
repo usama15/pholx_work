@@ -276,12 +276,6 @@ table td {
 }
 
 
-.footer {
-    background-color: black;
-    width: 100%;
-    height: 60px;
-}
-
 #img7 {
 	position: absolute;
 	top: -100px;
@@ -302,10 +296,27 @@ table td {
     height: 450px;
 }
 
-@media screen and (max-width: 960px) {
-    .bestSellerCard {
-        margin:0% 25%!important;
-    }
+.bestSellerCards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.footer div {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 885px) {
+  .card {
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 738px) {
@@ -318,13 +329,6 @@ table td {
     .inner_table td:nth-child(2) {
         padding-right: 25px;
     }
-}
-
-@media screen and (max-width: 600px) {
-    .bestSellerCard {
-        margin:0% 22%!important;
-    }
-    
 }
 
 @media screen and (max-width: 588px) {
@@ -340,49 +344,11 @@ table td {
     }
 }
 
-@media screen and (max-width: 500px) {
-    .bestSellerCard {
-        margin:0% 15%!important;
-    }
-}
-
 @media screen and (max-width: 489px) {
     .inner_table td:nth-child(2) {
         font-size: 12px;
         padding-right: 4px;
     }
-}
-
-@media screen and (max-width: 430px) {
-    .bestSellerCard {
-        margin:0% 10%!important;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .bestSellerCard {
-        margin:0% 7%!important;
-    }
-}
-
-@media screen and (max-width: 380px) {
-  .bestSellerCard {
-      margin:0% 5%!important;
-  }
-
-  .bestSeller {
-    margin:50px 30px!important;
-}
-}
-
-@media screen and (max-width: 420px) {
-  .bestSellerCard {
-      margin:0% 3%!important;
-  }
-
-  .bestSeller {
-    margin:50px 60px!important;
-}
 }
 
 @media screen and (max-width:675px) {

@@ -15,7 +15,6 @@ import theme from "./theme";
 function App() {
   return (
     <Router >
-        <MuiThemeProvider theme={theme}>
       <Navbar />
       <Switch>
         <Route exact path='/' component={Home} />
@@ -23,7 +22,7 @@ function App() {
         <Route exact path='/contact' component={Contact} />
         <Route exact path='/about' component={About} />
       </Switch>
-        </MuiThemeProvider>
+        {/* </MuiThemeProvider> */}
     </Router>
   );
 }

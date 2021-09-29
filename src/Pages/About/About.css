@@ -1,3 +1,33 @@
 #info * {
     margin-bottom: 10px;
 }
+
+.main_about {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.right_about img {
+    width: 45vw;
+}
+
+.left_about {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 770px) {
+    .main_about {
+        flex-direction: column-reverse;
+    }
+    .right_about img {
+        /* display: inline-block; */
+        display: flex;
+        justify-content: center;
+        width: 95vw;
+        margin-left: 2vw!important;
+    }
+    .left_about {
+        margin: 20px;
+    }
+}
