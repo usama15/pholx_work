@@ -51,10 +51,10 @@ const Contact = () => {
                 background: "rgb(244,44,55)",
                 color: "white",
                 borderRadius: "30px",
-                padding: "30px!important",
+                padding: "10px 30px",
               }}
             >
-              Shop By Category
+              Submit
             </Button>
           </form>
         </div>

@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 805px) {
     .main_contact {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .right_contact img {
         /* display: inline-block; */

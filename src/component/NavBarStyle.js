@@ -123,7 +123,7 @@ export const useStyles = makeStyles((theme) => ({
             flexDirection: 'column',
             height: '87.5vh',
             position: 'fixed',
-            top: '10vh',
+            top: '9vh',
             width: '100%',
             left: 0,
             transform: 'translateY(0)',

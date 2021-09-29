@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 770px) {
     .main_about {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .right_about img {
         /* display: inline-block; */

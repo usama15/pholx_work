@@ -119,9 +119,10 @@ export default function PrimarySearchAppBar() {
               onClick={handleNavbar}
             />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
-          </Typography>
+          {/* <Typography className={classes.title} variant="h6" noWrap>
+            Pholx
+          </Typography> */}
+          <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/logotype.png" />
           <div>
             <List
               className={`${navOpen ? `${classes.listItemsActive}` : `${classes.listItems}`}`}
