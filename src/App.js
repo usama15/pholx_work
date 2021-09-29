@@ -11,6 +11,7 @@ import Contact from "./Pages/Contact/Contact";
 import {Shop} from "./Pages/Shop/Shop";
 import {MuiThemeProvider} from "@material-ui/core";
 import theme from "./theme";
+import { Footer } from './component/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/contact' component={Contact} />
         <Route exact path='/about' component={About} />
       </Switch>
+      <Footer />
         {/* </MuiThemeProvider> */}
     </Router>
   );
