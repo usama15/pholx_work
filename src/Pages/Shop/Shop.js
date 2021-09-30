@@ -168,13 +168,20 @@ export const Shop = () => {
               id="dataExpanded"
               style={{ textAlign: "center", margin: "30px" }}
             >
-              <p>Earphone</p>
-              <p>Gadgets</p>
-              <p>Gaming</p>
-              <p>Headphone</p>
-              <p>Laptop</p>
-              <p>Speaker</p>
-              <p>Uncategorized</p>
+              <p>Clothes / apparel</p>
+              <p>Jewellery</p>
+              <p>Accessories</p>
+              <p>Boxes / packing</p>
+              <p>Watches</p>
+              <p>Electrical</p>
+              <p>Electronic</p>
+              <p>Beauty Care</p>
+              <p>Food and beverage</p>
+              <p>Health medical</p>
+              <p>Good supplies</p>
+              <p>Shoe item</p>
+              <p>Modified and custom</p>
+              <p>Sports goods</p>
             </div>
           ) : null}
           <hr style={{"marginLeft":"10px"}}/>
