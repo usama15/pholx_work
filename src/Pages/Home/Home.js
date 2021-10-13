@@ -19,13 +19,13 @@ const Home = () => {
           borderRadius: "30px",
         }}
       >
-        <div className="card-body" style={{ "margin-top": "18%" }}>
-          <div style={{ float: "left", "margin-left": "7%" }}>
+        <div className="card-body" style={{ "marginTop": "18%" }}>
+          <div style={{ float: "left", "marginLeft": "7%" }}>
             <p
               className="card-text"
               id="beats"
               style={{
-                "font-size": "3vw",
+                "fontSize": "3vw",
                 fontFamily: "poppins, sans-serif",
                 fontWeight: "bold",
               }}
@@ -186,7 +186,7 @@ const Home = () => {
       <Card
         className="promotion_cards"
         style={{
-          "background-color": "#f42c37",
+          "backgroundColor": "#f42c37",
           border: "0px solid #f42c37",
           overflow: "hidden",
         }}
@@ -198,7 +198,7 @@ const Home = () => {
                 <div className="outer">
                   <div className="content">
                     <h4 style={{ color: "#f87b82" }}>20% OFF</h4>
-                    <h1 style={{ color: "#ffffff", "font-size": "65px" }}>
+                    <h1 style={{ color: "#ffffff", "fontSize": "65px" }}>
                       FINE
                       <br />
                       SALE
@@ -220,7 +220,7 @@ const Home = () => {
               <h1
                 style={{
                   color: "#ffffff",
-                  "font-size": "45px",
+                  "fontSize": "45px",
                   margin: "10px",
                 }}
               >
@@ -270,7 +270,7 @@ const Home = () => {
       </div>
       <Card
         className="promotion_cards"
-        style={{ "background-color": "#2cc96c", border: "0px solid #2cc96c" }}
+        style={{ "backgroundColor": "#2cc96c", border: "0px solid #2cc96c" }}
       >
         <Card.Body>
           <Grid container>
@@ -279,7 +279,7 @@ const Home = () => {
                 <div className="outer">
                   <div className="content">
                     <h4 style={{ color: "grey" }}>20% OFF</h4>
-                    <h1 style={{ color: "#ffffff", "font-size": "65px" }}>
+                    <h1 style={{ color: "#ffffff", "fontSize": "65px" }}>
                       HAPPY
                       <br />
                       HOURS
@@ -300,7 +300,7 @@ const Home = () => {
               <h1
                 style={{
                   color: "#ffffff",
-                  "font-size": "45px",
+                  "fontSize": "45px",
                   margin: "10px",
                 }}
               >

@@ -34,7 +34,7 @@ export const Footer = () => {
         />
       </div>
       <div>
-        <h4 style={{ color: "black", "font-weight": "bold" }}>Contact</h4>
+        <h4 style={{ color: "black", "fontWeight": "bold" }}>Contact</h4>
         <p style={{ color: "black", marginTop: "10px" }}>
           +99 (0) 101 0000 888 Patricia C.
         </p>

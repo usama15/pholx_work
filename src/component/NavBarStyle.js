@@ -6,16 +6,18 @@ export const useStyles = makeStyles((theme) => ({
     grow: {
         flexGrow: 1,
         height: '10vh',
+        position: "relative",
     },
     menuButton: {
         marginRight: theme.spacing(2),
-        display: 'block',
-        [theme.breakpoints.up('sm')]: {
-            display: 'none',
-                    color:'black',
-
-
+        display: 'none',
+        ['@media (max-width: 710px)']: {
+            display: 'block',
+            color:'black',
         },
+    },
+    drawer: {
+        width: "50vw!important",
     },
     title: {
         // display: 'none',
@@ -38,7 +40,6 @@ export const useStyles = makeStyles((theme) => ({
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100%',
@@ -47,13 +48,20 @@ export const useStyles = makeStyles((theme) => ({
         },
     },
     sectionDesktop: {
-        display: 'none',
-        [theme.breakpoints.up('md')]: {
-            display: 'flex',
-        },
+        // display: 'none',
+        // [theme.breakpoints.up('md')]: {
+        //     display: 'flex',
+        // },
+        ["@media (max-width: 510px)"]: {
+            marginLeft: 0,
+        }
     },
     sectionMobile: {
         display: 'flex',
+        justifyContent: "flexEnd",
+        position: "absolute",
+        right: 10,
+        marginLeft: 0,
         [theme.breakpoints.up('md')]: {
             display: 'none',
         },
@@ -64,71 +72,26 @@ export const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
         flex: 1,
-
-        ['@media (max-width: 600px)']: {
-            backgroundColor: 'lightblue',
-            // display: 'block',
-            display: 'flex',
-            flexDirection: 'column',
-            height: '87.5vh',
-            position: 'fixed',
-            top: '10vh',
-            width: '100%',
-            left: 0,
-            transform: 'translateY(100%)',
-            transition: 'all 0.5s ease-in-out',
-            zIndex: "10!important",
-        }
     },
     listItem: {
         margin: '0px 30px',
-
-        ['@media (max-width: 600px)']: {
-            margin: '0px',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontSize: '30px',
-        }
     },
     listItemLink: {
         textDecoration: 'none',
         color: 'black',
+        cursor: "pointer",
     },
 
     linkText: {
-        ['@media (max-width: 600px)']: {
-            fontSize: '30px',
-            color: 'black',
-            fontWeight: 'bold',
-            padding: '15px',
-            width: '100vw',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-
-        }
+        color: "black",
+        ['@media (max-width: 710px)']: {
+            display: "none",
+        },
     },
     listItemsActive: {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         flex: 1,
-
-        ['@media (max-width: 600px)']: {
-            backgroundColor: 'lightblue',
-            // display: 'block',
-            display: 'flex',
-            flexDirection: 'column',
-            height: '87.5vh',
-            position: 'fixed',
-            top: '9vh',
-            width: '100%',
-            left: 0,
-            transform: 'translateY(0)',
-            transition: 'all 0.5s ease-in-out',
-            zIndex: "10!important",
-        }
     },
 }));

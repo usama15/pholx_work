@@ -1,35 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
   Badge,
   MenuItem,
   Menu,
   List,
-  ListItemText
-} from '@material-ui/core';
+  ListItem,
+  ListItemText,
+  Box,
+  Drawer,
+} from "@material-ui/core";
 
-import './Nav.css'
+import "./Nav.css";
 
-import MenuIcon from '@material-ui/icons/Menu';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingBasketOutlined';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import { useStyles } from './NavBarStyle';
-import { Link } from 'react-router-dom'
+import MenuIcon from "@material-ui/icons/Menu";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingBasketOutlined";
+import { AccountCircle } from "@material-ui/icons";
+import MoreIcon from "@material-ui/icons/MoreVert";
+import { useStyles } from "./NavBarStyle";
+import { Link } from "react-router-dom";
 
-export default function PrimarySearchAppBar() {
+export default function App() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const [navOpen, setNavOpen] = useState(false);
-
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    event.preventDefault();
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setDrawerOpen(open);
+  };
+
+  const links = ["/", "/about", "/shop", "/contact"];
+
+  const list = () => (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {["Home", "About", "Shop", "Contact"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemText>
+              <Link to={links[index]} className={classes.listItemLink}>
+                {text}
+              </Link>
+            </ListItemText>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -48,14 +85,14 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const menuId = 'primary-search-account-menu';
+  const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
@@ -64,14 +101,14 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
@@ -97,17 +134,9 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
-  const handleNavbar = () => {
-    setNavOpen(!navOpen);
-  }
-
-  const closeOnMobileMenu = () => {
-    setNavOpen(false);
-  }
-
   return (
     <div className={classes.grow}>
-      <AppBar className='nav' position="static">
+      <AppBar className="nav" position="static">
         <Toolbar>
           <IconButton
             edge="start"
@@ -115,43 +144,62 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-            <MenuIcon
-              onClick={handleNavbar}
-            />
+            <MenuIcon onClick={toggleDrawer(true)} />
           </IconButton>
+          <Drawer
+            anchor="left"
+            open={drawerOpen}
+            onClose={toggleDrawer(false)}
+            className={classes.drawer}
+          >
+            {list()}
+          </Drawer>
           {/* <Typography className={classes.title} variant="h6" noWrap>
             Pholx
           </Typography> */}
           <img src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/logotype.png" />
           <div>
-            <List
-              className={`${navOpen ? `${classes.listItemsActive}` : `${classes.listItems}`}`}
-            >
-              <ListItemText className={classes.listItem} onClick={closeOnMobileMenu}>
+            <List className={classes.listItemsActive} id="none">
+              <ListItemText
+                className={classes.listItem}
+                // onClick={closeOnMobileMenu}
+              >
                 <Link to="/" className={classes.listItemLink}>
                   <ListItemText className={classes.linkText}>Home</ListItemText>
                 </Link>
               </ListItemText>
-              <ListItemText className={classes.listItem} onClick={closeOnMobileMenu}>
+              <ListItemText
+                className={classes.listItem}
+                // onClick={closeOnMobileMenu}
+              >
                 <Link to="/about" className={classes.listItemLink}>
-                  <ListItemText className={classes.linkText}>About</ListItemText>
+                  <ListItemText className={classes.linkText}>
+                    About
+                  </ListItemText>
                 </Link>
               </ListItemText>
-              <ListItemText className={classes.listItem} onClick={closeOnMobileMenu}>
+              <ListItemText
+                className={classes.listItem}
+                // onClick={closeOnMobileMenu}
+              >
                 <Link to="/shop" className={classes.listItemLink}>
                   <ListItemText className={classes.linkText}>Shop</ListItemText>
                 </Link>
               </ListItemText>
-              <ListItemText className={classes.listItem} onClick={closeOnMobileMenu}>
+              <ListItemText
+                className={classes.listItem}
+                // onClick={closeOnMobileMenu}
+              >
                 <Link to="/contact" className={classes.listItemLink}>
-                  <ListItemText className={classes.linkText}>Contact</ListItemText>
+                  <ListItemText className={classes.linkText}>
+                    Contact
+                  </ListItemText>
                 </Link>
               </ListItemText>
             </List>
           </div>
-          <div className={classes.grow} />
+          <div className={classes.grow}/>
           <div className={classes.sectionDesktop}>
-
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -160,20 +208,18 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <ListItemText className={classes.listItem} onClick={closeOnMobileMenu}>
-                <Link to="/contact" className={classes.listItemLink}>
-                  <ListItemText className={classes.linkText}>Login</ListItemText>
+                <Link to="/">
+                  <AccountCircle />
                 </Link>
-              </ListItemText>
               {/*<AccountCircle />*/}
             </IconButton>
-             <IconButton aria-label="show 1 new notifications" color="inherit">
+            <IconButton aria-label="show 1 new notifications" color="inherit">
               <Badge badgeContent={1} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
           </div>
-          <div className={classes.sectionMobile}>
+          {/* <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}
@@ -183,11 +229,11 @@ export default function PrimarySearchAppBar() {
             >
               <MoreIcon />
             </IconButton>
-          </div>
+          </div> */}
         </Toolbar>
       </AppBar>
-      { renderMobileMenu}
-      { renderMenu}
-    </div >
+      {renderMobileMenu}
+      {renderMenu}
+    </div>
   );
 }

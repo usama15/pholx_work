@@ -1,7 +1,22 @@
+.nav {
+  box-shadow: none !important;
+  background-color: white !important;
+  margin: 1% 0% !important;
+  color: black !important;
+  overflow: hidden;
+}
 
-.nav{
-    box-shadow: none!important;
-    background-color: white !important;
-    margin-top: 1%!important;
-    color: black!important;
+.MuiDrawer-paper {
+  width: 175px;
+}
+
+.nav img {
+    display: block;
+    margin-left: 0!important;
+}
+
+@media screen and (max-width: 510px) {
+  #none {
+    display: none!important;
+  }
 }
