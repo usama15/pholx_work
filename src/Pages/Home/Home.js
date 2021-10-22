@@ -19,7 +19,7 @@ const Home = () => {
           borderRadius: "30px",
         }}
       >
-        <div className="card-body" style={{ "marginTop": "18%" }}>
+        <div className="card-body" style={{ "marginTop": "10%" }}>
           <div style={{ float: "left", "marginLeft": "7%" }}>
             <p
               className="card-text"
@@ -50,6 +50,7 @@ const Home = () => {
                     marginLeft: "13%",
                     maxHeight: "2000px",
                     height: "auto",
+                    top: "10",
                   }}
                 />
               </div>
