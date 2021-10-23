@@ -1,0 +1,27 @@
+.totalAmountTable {
+    width:40vw;
+    border-bottom: 1px solid #ddd;
+    overflow: visible;
+}
+
+.totalAmountTable th {
+    background-color: #F3F3F3;
+}
+
+.totalAmountTable tr,
+.totalAmountTable th {
+    padding: 0 10px;
+    border: 1px solid #ddd;
+}
+
+.removeUnderline {
+    text-decoration: none;
+}
+
+@media (max-width: 665px) {
+    .totalAmountTable {
+        width: 80vw;
+    }
+
+    
+}

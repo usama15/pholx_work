@@ -1,0 +1,23 @@
+.totalAmountSection {
+    display: flex;
+    justify-content: flex-end!important;
+    width: 95%;
+    padding: 20px;
+}
+
+.totalAmountSection button {
+    width: 20vw;
+    margin: 10px 25%;
+    background-color: #96588A;
+    color: white;
+}
+
+@media (max-width: 665px) {
+    .totalAmountSection {
+        justify-content: space-around!important;
+    }
+
+    .totalAmountSection button {
+        width: 40vw;
+    }
+}
