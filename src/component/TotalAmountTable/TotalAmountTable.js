@@ -1,5 +1,6 @@
 import React from 'react'
 import "./styles.css"
+import bestSellerProducts from "../../data/bestSellerProducts"
 
 export const TotalAmountTable = () => {
     return (
@@ -7,7 +8,7 @@ export const TotalAmountTable = () => {
             <table className="totalAmountTable">
                 <tr>
                     <th>Subtotal</th>
-                    <td>$17000</td>
+                    <td>{Object.entries(bestSellerProducts).length > 0 ? "$17000": "$0"}</td>
                 </tr>
                 <tr>
                     <th>Shipping</th>
@@ -15,7 +16,7 @@ export const TotalAmountTable = () => {
                 </tr>
                 <tr>
                     <th>Total</th>
-                    <td>$18000</td>
+                    <td>{Object.entries(bestSellerProducts).length > 0 ? "$18000": "$0"}</td>
                 </tr>
             </table>
         </div>

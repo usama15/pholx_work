@@ -14,6 +14,10 @@
     background-color: #F3F3F3;
 }
 
+#noProducts {
+    text-align: center;
+}
+
 @media (max-width:500px) {
     .productsTable thead {
         display: none;
@@ -42,6 +46,11 @@
     #removeBtn {
         text-align: left;
         padding-left: 15px;
+    }
+
+    #noProducts {
+        width: 100%!important;
+        padding-left: 0;
     }
 }
 

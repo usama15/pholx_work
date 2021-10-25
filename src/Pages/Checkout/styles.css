@@ -1,0 +1,56 @@
+.checkoutSection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.rightSideOfCheckoutSection,.leftSideOfCheckoutSection {
+    width: 40vw;
+}
+
+.orderSection {
+    margin: 20px 5vw;
+}
+
+.orderSection table {
+    width: 90vw;
+}
+
+.orderSection table tr,
+.orderSection table td,
+.orderSection table th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.orderSection table td,
+.orderSection table th {
+    width: 45vw;
+}
+
+.orderSection table th {
+    background-color: #F3F3F3;
+    font-weight: bold;
+}
+
+.placeOrder {
+    display: flex;
+    justify-content: center;
+}
+
+.placeOrder button {
+    background-color: #96588a;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 770px) {
+    .checkoutSection {
+        flex-direction: column;
+    }
+
+    .rightSideOfCheckoutSection,.leftSideOfCheckoutSection {
+        width: 90vw;
+        margin: 10px 5vw;
+    }
+}

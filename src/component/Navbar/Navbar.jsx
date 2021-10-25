@@ -22,6 +22,7 @@ import { AccountCircle } from "@material-ui/icons";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useStyles } from "./NavBarStyle";
 import { Link } from "react-router-dom";
+import bestSellerProducts from "../../data/bestSellerProducts";
 
 export default function App() {
   const classes = useStyles();
@@ -114,7 +115,7 @@ export default function App() {
     >
       <MenuItem>
         <IconButton aria-label="show 1 new notifications" color="inherit">
-          <Badge badgeContent={1} color="secondary">
+          <Badge badgeContent={Object.entries(bestSellerProducts).length} color="secondary">
             <ShoppingCartIcon />
           </Badge>
         </IconButton>
@@ -215,7 +216,7 @@ export default function App() {
             </IconButton>
             <Link to="/cart">
               <IconButton aria-label="show 1 new notifications" color="inherit">
-                <Badge badgeContent={1} color="secondary">
+                <Badge badgeContent={Object.entries(bestSellerProducts).length} color="secondary">
                   <ShoppingCartIcon style={{color: "black"}}/>
                 </Badge>
               </IconButton>

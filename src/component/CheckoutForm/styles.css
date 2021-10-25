@@ -1,0 +1,37 @@
+.twoInputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.twoInputs input {
+    width: 15vw;
+}
+
+.singleInput input,
+.singleInput textarea {
+    width: 20vw;
+}
+
+.singleInput .select {
+    width: 40vw;
+}
+
+.twoInputs,.singleInput {
+    padding-top: 10px;
+}
+
+@media (max-width: 770px) {
+    .twoInputs input {
+        width: 40vw;
+    }
+    
+    .singleInput input,
+    .singleInput textarea {
+        width: 45vw;
+    }
+    
+    .singleInput .select {
+        width: 90vw;
+    }
+}

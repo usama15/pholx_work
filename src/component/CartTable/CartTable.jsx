@@ -13,15 +13,20 @@ export const CartTable = () => {
                 <th>Subtotal</th>
             </thead>
             <tbody>
-                {Object.entries(bestSellerProducts).map(([item, { name, price }]) => (
-                    <tr>
-                        <td style={{ "color": "red","cursor":"pointer"}} id="removeBtn">X</td>
-                        <td data-label="Name:">{name}</td>
-                        <td data-label="Price:">{price}</td>
-                        <td data-label="Quantity:"><input type="number" value="1" style={{ "width":"50px" }} /></td>
-                        <td data-label="Subtotal:">{price}</td>
-                    </tr>
-                ))}
+                {Object.entries(bestSellerProducts).length > 0 ?
+                    Object.entries(bestSellerProducts).map(([item, { name, price }]) => (
+                        <tr>
+                            <td style={{ "color": "red", "cursor": "pointer" }} id="removeBtn">X</td>
+                            <td data-label="Name:">{name}</td>
+                            <td data-label="Price:">{price}</td>
+                            <td data-label="Quantity:"><input type="number" value="1" style={{ "width": "50px" }} /></td>
+                            <td data-label="Subtotal:">{price}</td>
+                        </tr>
+                    )) : (
+                        <tr>
+                            <td colSpan="5" id="noProducts">No products added to cart</td>
+                        </tr>
+                        )}
             </tbody>
         </table>
     )

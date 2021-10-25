@@ -11,8 +11,9 @@ import Contact from "./Pages/Contact/Contact";
 import {Shop} from "./Pages/Shop/Shop";
 import {MuiThemeProvider} from "@material-ui/core";
 import theme from "./theme";
-import { Footer } from './component/Footer';
+import { Footer } from './component/Footer/Footer';
 import { Cart } from './Pages/Cart/Cart';
+import { Checkout } from './Pages/Checkout/Checkout';
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/shop' component={Shop} />
-        <Route exact path='/contact' component={Contact} />
-        <Route exact path='/about' component={About} />
-        <Route exact path="/cart" component={Cart} />
+        <Route path='/shop' component={Shop} />
+        <Route path='/contact' component={Contact} />
+        <Route path='/about' component={About} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/checkout" component={Checkout} /> 
       </Switch>
       <Footer />
         {/* </MuiThemeProvider> */}
