@@ -214,6 +214,7 @@ export const Shop = () => {
                       <Card.Title style={{ fontWeight: "bold" }}>
                         {price}
                       </Card.Title>
+                      <Button variant="contained" className="addBtn">Add to Cart</Button>
                     </Card.Body>
                   </Card>
                 );
