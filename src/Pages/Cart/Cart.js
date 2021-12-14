@@ -5,8 +5,12 @@ import { TotalAmountTable } from '../../component/TotalAmountTable/TotalAmountTa
 import Button from "@material-ui/core/Button";
 import { Link } from 'react-router-dom';
 import bestSellerProducts from '../../data/bestSellerProducts';
+import {useSelector} from 'react-redux' ;
 
 export const Cart = () => {
+
+    const data = useSelector(state => state.cart.initialState)
+    console.log('data',data)
     return (
         <div>
             <div className="header">

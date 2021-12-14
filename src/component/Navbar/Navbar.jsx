@@ -21,10 +21,12 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingBasketOutlined";
 import { AccountCircle } from "@material-ui/icons";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useStyles } from "./NavBarStyle";
-import { Link } from "react-router-dom";
+import { Link , useHistory} from "react-router-dom";
 import bestSellerProducts from "../../data/bestSellerProducts";
+// import { Redirect } from "react-router-dom";
 
 export default function App() {
+  let history = useHistory();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -206,13 +208,14 @@ export default function App() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              // onClick={handleProfileMenuOpen}
+              onClick={() => history.push("/login")}
               color="inherit"
             >
                 <Link to="/">
                   <AccountCircle />
                 </Link>
-              {/*<AccountCircle />*/}
+              {/* {/<AccountCircle />} */}
             </IconButton>
             <Link to="/cart">
               <IconButton aria-label="show 1 new notifications" color="inherit">

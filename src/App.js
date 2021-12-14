@@ -14,6 +14,9 @@ import theme from "./theme";
 import { Footer } from './component/Footer/Footer';
 import { Cart } from './Pages/Cart/Cart';
 import { Checkout } from './Pages/Checkout/Checkout';
+import CartDetail from './Pages/CartDetail/Detail';
+import Login from './component/Profile/Login';
+import Register from './component/Register/Register';
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Route path='/about' component={About} />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} /> 
+        <Route path="/cartdetail" component={CartDetail} /> 
+        <Route path="/login" component={Login} /> 
+        <Route path="/register" component={Register} /> 
       </Switch>
       <Footer />
         {/* </MuiThemeProvider> */}
