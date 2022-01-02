@@ -1,7 +1,7 @@
-
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import db from '../../database/firebase'
+import db from "../../database/firebase";
+import "./Register.css"
 import {
   doc,
   setDoc,
@@ -10,32 +10,31 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { Link } from "react-router-dom";
-import Box from '@material-ui/core/Box';
-import { Grid } from '@material-ui/core';
-import { MenuItem } from '@material-ui/core';
-import { TextField } from '@material-ui/core';
-import { InputLabel } from '@material-ui/core';
-import { FormControl } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
+import Box from "@material-ui/core/Box";
+import { Grid } from "@material-ui/core";
+import { MenuItem } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
+import { InputLabel } from "@material-ui/core";
+import { FormControl } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import Checkbox from '@material-ui/core/Checkbox';
-import Select from '@material-ui/core/Select';
-import { IconButton } from '@material-ui/core';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import { InputAdornment } from '@material-ui/core';
-import { Input } from '@material-ui/core';
+import Checkbox from "@material-ui/core/Checkbox";
+import Select from "@material-ui/core/Select";
+import { IconButton } from "@material-ui/core";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import { InputAdornment } from "@material-ui/core";
+import { Input } from "@material-ui/core";
 // import DatePicker from '@mui/lab/DatePicker';
-import Paper from '@material-ui/core/Paper';
-
+import Paper from "@material-ui/core/Paper";
 
 const Register = () => {
   const [disable, setDisable] = useState(true);
   const [gender, setGender] = useState("");
   const [dob, setDob] = useState(new Date());
   const [checked, setChecked] = useState(false);
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -57,17 +56,17 @@ const Register = () => {
           fullname: values.fullname,
           Gender: gender,
           date: dob.toLocaleDateString(),
-        })
+        });
         setData(user);
         console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage)
+        alert(errorMessage);
       });
   };
-  console.log(data.uid)
+  console.log(data.uid);
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -119,26 +118,28 @@ const Register = () => {
                 <div>
                   <TextField
                     id="standard-textarea"
-                    label="Please enter your Email"
+                    label="Email"
                     variant="standard"
                     onChange={handleChange("email")}
+                    className="loginInput"
                   />
                 </div>
                 <div>
                   <TextField
                     id="standard-number"
-                    label="Number"
+                    label="Phone No"
                     type="number"
                     variant="standard"
                     onChange={handleChange("phone")}
+                    className="loginInput"
                   />
                 </div>
               </Box>
               <Box>
                 <div>
-                  <FormControl sx={{ m: 1, width: "30ch" }} variant="standard">
+                  <FormControl sx={{ m: -1, width: "30ch" }}>
                     <InputLabel htmlFor="standard-adornment-password">
-                      Please enter your Password
+                      Password
                     </InputLabel>
                     <Input
                       id="standard-adornment-password"
@@ -160,6 +161,8 @@ const Register = () => {
                           </IconButton>
                         </InputAdornment>
                       }
+                      style={{width: "29ch"}}
+                      className="controlInput"
                     />
                   </FormControl>
                 </div>
@@ -190,6 +193,8 @@ const Register = () => {
                       value={gender}
                       onChange={handleChangeGender}
                       label="Gender"
+                      style={{width: "15ch"}}
+                      className="controlGenderInput"
                     >
                       <MenuItem value={"Male"}>Male</MenuItem>
                       <MenuItem value={"Female"}>Female</MenuItem>
@@ -203,7 +208,7 @@ const Register = () => {
               <Box
                 component="form"
                 sx={{
-                  "& .MuiTextField-root": { m: 1, width: "30ch" },
+                  "& .MuiTextField-root": { m: 1, width: "30ch"},
                 }}
                 noValidate
                 autoComplete="off"
@@ -212,9 +217,11 @@ const Register = () => {
                   <TextField
                     className="emailGridDiv"
                     id="standard-textarea"
-                    label="Please enter first and last name"
+                    label="Full Name"
                     variant="standard"
                     onChange={handleChange("fullname")}
+                    className="loginInput"
+                    style={{margin:"5px"}} 
                   />
                 </div>
                 <div className="divCheck">
@@ -229,8 +236,6 @@ const Register = () => {
                   </span>
                 </div>
               </Box>
-
-              <Paper spacing={2} direction="row">
                 <Button
                   variant="contained"
                   disabled={disable}
@@ -239,7 +244,6 @@ const Register = () => {
                 >
                   SIGN UP
                 </Button>
-              </Paper>
               <p className="signPera">
                 By clicking “SIGN UP”, I agree to Jaymart's Terms of Use and
                 Privacy Policy
@@ -250,9 +254,6 @@ const Register = () => {
       </div>
     </div>
   );
-
-              }
-
-
+};
 
 export default Register;

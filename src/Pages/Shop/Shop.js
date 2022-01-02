@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Shop.css";
-import { Grid, TextField, Button } from "@material-ui/core";
+import { Grid, TextField, Button, CircularProgress } from "@material-ui/core";
 import { Card } from "react-bootstrap";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import SearchIcon from "@material-ui/icons/Search";
@@ -10,15 +10,12 @@ import bestSellerProducts from "../../data/bestSellerProducts";
 import ClearIcon from "@material-ui/icons/Clear";
 import CartDetail from "../CartDetail/Detail";
 import { useHistory, useLocation } from "react-router-dom";
-import db from '../../database/firebase';
-import {
-  onSnapshot,
-  collection,
-  doc,
-} from "@firebase/firestore";
-import { useLcation } from 'react-router-dom';
+import db from "../../database/firebase";
+import { onSnapshot, collection, doc } from "@firebase/firestore";
+import { useLcation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {addCart} from '../../Store/Reducers/AddToCart'
+import { addCart } from "../../Store/Reducers/AddToCart";
+import { SkeletonCard } from "../../component/SkeletonCard/SkeletonCard";
 
 export const Shop = () => {
   const dispatch = useDispatch();
@@ -33,16 +30,14 @@ export const Shop = () => {
 
   useEffect(() => {
     const showData = collection(db, "product");
-
-    const getData = onSnapshot(showData, (snapshot) => {
+    const getData = onSnapshot(showData, async (snapshot) => {
+      console.log(data);
       const datas = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       setData(datas);
-      console.log(datas)
+      console.log(datas);
     });
     return getData;
-  }, [])
-
-
+  }, []);
 
   const searchProducts = () => {
     const prds = [];
@@ -63,9 +58,9 @@ export const Shop = () => {
   };
 
   const clickMe = (val) => {
-    history.push({pathname: '/cartdetail', state: {detail: val}});
+    history.push({ pathname: "/cartdetail", state: { detail: val } });
     // console.log(val);
-  }
+  };
 
   return (
     <div>
@@ -187,9 +182,7 @@ export const Shop = () => {
             </Button>
           </div>
           <div className="categories_wrapper">
-            <h3>
-              Product Categories
-            </h3>
+            <h3>Product Categories</h3>
             <button
               style={{ background: "white", border: "none" }}
               onClick={() => changeArrow()}
@@ -218,7 +211,7 @@ export const Shop = () => {
               <p>Sports goods</p>
             </div>
           ) : null}
-          <hr style={{ "marginLeft": "10px" }} />
+          <hr style={{ marginLeft: "10px" }} />
           <Button
             id="filter"
             variant="contained"
@@ -233,28 +226,45 @@ export const Shop = () => {
             Shop
           </h1>
           <div className="bestSellerCards">
-            {data.map((val) =>
-            (
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src={val.image}
-                  width="100%"
-                  height="212"
-                  // onClick={() => console.log(val.image)}
-                  onClick={() => clickMe(val)}
-                />
-                <Card.Body>
-                  <Card.Title>{val.name}</Card.Title>
-                  <Card.Title style={{ fontWeight: "bold" }}>
-                    {val.price}
-                  </Card.Title>
-                  <Button variant="contained" className="addBtn" onClick={() => dispatch(addCart(val)) }>Add to Cart</Button>
-                </Card.Body>
-              </Card>
-            )
-
+            {data.length == 0 ? (
+              <>
+                <div>
+                  <SkeletonCard />
+                  <SkeletonCard />
+                </div>
+                <div>
+                  <SkeletonCard />
+                  <SkeletonCard />
+                </div>
+              </>
+            ) : (
+              data.map((val) => (
+                <Card>
+                  <Card.Img
+                    variant="top"
+                    src={val.image}
+                    width="100%"
+                    height="212"
+                    // onClick={() => console.log(val.image)}
+                    onClick={() => clickMe(val)}
+                  />
+                  <Card.Body>
+                    <Card.Title>{val.name}</Card.Title>
+                    <Card.Title style={{ fontWeight: "bold" }}>
+                      {val.price}
+                    </Card.Title>
+                    <Button
+                      variant="contained"
+                      className="addBtn"
+                      onClick={() => dispatch(addCart(val))}
+                    >
+                      Add to Cart
+                    </Button>
+                  </Card.Body>
+                </Card>
+              ))
             )}
+
             {/* {Object.entries(bestSellerProducts).map(
               ([item, { name, picture, price }]) => {
                 return (
