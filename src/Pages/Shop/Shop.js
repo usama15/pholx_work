@@ -21,6 +21,7 @@ export const Shop = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [data, setData] = useState([]);
+  const [searchedData, setSearchedData] = useState([]);
   const [dataExpanded, setDataExpanded] = useState(false);
   const [products, setProducts] = useState(bestSellerProducts);
   const [search, setSearch] = useState("");
@@ -34,6 +35,7 @@ export const Shop = () => {
       console.log(data);
       const datas = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       setData(datas);
+      setSearchedData(datas);
       console.log(datas);
     });
     return getData;
@@ -43,19 +45,19 @@ export const Shop = () => {
     const prds = [];
     const nameLength = search.length;
     data.map((product) => {
-      if (product.name.slice(0,nameLength) == search.slice(0,nameLength)) {
+      if (product.name.slice(0, nameLength) == search.slice(0, nameLength)) {
         prds.push(product);
       }
     });
     if (prds.length == 0) {
       alert("No Product Found");
     } else {
-      setData(prds);
+      setSearchedData(prds);
     }
   };
   const resetToDefault = () => {
     setSearch("");
-    setProducts(bestSellerProducts);
+    setSearchedData(data);
   };
 
   const clickMe = (val) => {
@@ -169,10 +171,19 @@ export const Shop = () => {
               value={search}
             />
             {search != "" ? (
-              <ClearIcon onClick={() => resetToDefault()} style={{"marginTop": "65px","zIndex": "5","position":"relative","right":30}} />
+              <ClearIcon
+                onClick={() => resetToDefault()}
+                style={{
+                  marginTop: "65px",
+                  zIndex: "5",
+                  position: "relative",
+                  right: 30,
+                }}
+              />
             ) : null}
             <Button
-              variant="contained"z
+              variant="contained"
+              z
               color="secondary"
               style={{
                 marginTop: "45px",
@@ -229,7 +240,7 @@ export const Shop = () => {
             Shop
           </h1>
           <div className="bestSellerCards">
-            {data.length == 0 ? (
+            {searchedData.length == 0 ? (
               <>
                 <div>
                   <SkeletonCard />
@@ -240,9 +251,35 @@ export const Shop = () => {
                   <SkeletonCard />
                 </div>
               </>
-            ) : (
+            ) : search == "" ? (
               data.map((val) => (
-                <Card style={{width: "300px"}}>
+                <Card style={{ width: "300px" }}>
+                  <Card.Img
+                    variant="top"
+                    src={val.image}
+                    width="100%"
+                    height="212"
+                    // onClick={() => console.log(val.image)}
+                    onClick={() => clickMe(val)}
+                  />
+                  <Card.Body>
+                    <Card.Title>{val.name}</Card.Title>
+                    <Card.Title style={{ fontWeight: "bold" }}>
+                      {val.price}
+                    </Card.Title>
+                    <Button
+                      variant="contained"
+                      className="addBtn"
+                      onClick={() => dispatch(addCart(val))}
+                    >
+                      Add to Cart
+                    </Button>
+                  </Card.Body>
+                </Card>
+              ))
+            ) : (
+              searchedData.map((val) => (
+                <Card style={{ width: "300px" }}>
                   <Card.Img
                     variant="top"
                     src={val.image}
@@ -267,7 +304,7 @@ export const Shop = () => {
                 </Card>
               ))
             )}
-
+            
             {/* {Object.entries(bestSellerProducts).map(
               ([item, { name, picture, price }]) => {
                 return (
