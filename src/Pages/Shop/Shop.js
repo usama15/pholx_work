@@ -239,7 +239,7 @@ export const Shop = () => {
               </>
             ) : (
               data.map((val) => (
-                <Card>
+                <Card style={{width: "300px"}}>
                   <Card.Img
                     variant="top"
                     src={val.image}
