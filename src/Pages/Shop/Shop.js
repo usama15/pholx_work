@@ -41,15 +41,16 @@ export const Shop = () => {
 
   const searchProducts = () => {
     const prds = [];
-    Object.entries(bestSellerProducts).map(([product, prd]) => {
-      if (prd["name"] == search) {
-        prds.push(prd);
+    const nameLength = search.length;
+    data.map((product) => {
+      if (product.name.slice(0,nameLength) == search.slice(0,nameLength)) {
+        prds.push(product);
       }
     });
     if (prds.length == 0) {
       alert("No Product Found");
     } else {
-      setProducts(prds);
+      setData(prds);
     }
   };
   const resetToDefault = () => {
@@ -164,12 +165,14 @@ export const Shop = () => {
               label="Search"
               variant="outlined"
               style={{ margin: "50px 0px 10px 0px" }}
+              onChange={(e) => setSearch(e.target.value)}
+              value={search}
             />
             {search != "" ? (
-              <ClearIcon onClick={() => resetToDefault()} />
+              <ClearIcon onClick={() => resetToDefault()} style={{"marginTop": "65px","zIndex": "5","position":"relative","right":30}} />
             ) : null}
             <Button
-              variant="contained"
+              variant="contained"z
               color="secondary"
               style={{
                 marginTop: "45px",
@@ -222,7 +225,7 @@ export const Shop = () => {
           </Button>
         </div>
         <div className="right">
-          <h1 style={{ margin: "50px 0px 0px 15%", textAlign: "center" }}>
+          <h1 style={{ margin: "50px 0px 0px 0%", textAlign: "center" }}>
             Shop
           </h1>
           <div className="bestSellerCards">
