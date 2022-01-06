@@ -1,0 +1,11 @@
+.prodImg {
+  width: "59vw";
+  height: "600px";
+  border-radius: "20px";
+}
+
+@media (max-width: 860px) {
+  .prodImg {
+    width: "98vw";
+  }
+}

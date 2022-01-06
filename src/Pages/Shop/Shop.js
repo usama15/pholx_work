@@ -16,6 +16,7 @@ import { useLcation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../Store/Reducers/AddToCart";
 import { SkeletonCard } from "../../component/SkeletonCard/SkeletonCard";
+import { ProductCard } from "../../component/ProductCard/ProductCard";
 
 export const Shop = () => {
   const dispatch = useDispatch();
@@ -253,55 +254,11 @@ export const Shop = () => {
               </>
             ) : search == "" ? (
               data.map((val) => (
-                <Card style={{ width: "300px" }}>
-                  <Card.Img
-                    variant="top"
-                    src={val.image}
-                    width="100%"
-                    height="212"
-                    // onClick={() => console.log(val.image)}
-                    onClick={() => clickMe(val)}
-                  />
-                  <Card.Body>
-                    <Card.Title>{val.name}</Card.Title>
-                    <Card.Title style={{ fontWeight: "bold" }}>
-                      {val.price}
-                    </Card.Title>
-                    <Button
-                      variant="contained"
-                      className="addBtn"
-                      onClick={() => dispatch(addCart(val))}
-                    >
-                      Add to Cart
-                    </Button>
-                  </Card.Body>
-                </Card>
+                <ProductCard product={val} addProdFunc={addCart} viewDetailsFunc={clickMe}/>
               ))
             ) : (
               searchedData.map((val) => (
-                <Card style={{ width: "300px" }}>
-                  <Card.Img
-                    variant="top"
-                    src={val.image}
-                    width="100%"
-                    height="212"
-                    // onClick={() => console.log(val.image)}
-                    onClick={() => clickMe(val)}
-                  />
-                  <Card.Body>
-                    <Card.Title>{val.name}</Card.Title>
-                    <Card.Title style={{ fontWeight: "bold" }}>
-                      {val.price}
-                    </Card.Title>
-                    <Button
-                      variant="contained"
-                      className="addBtn"
-                      onClick={() => dispatch(addCart(val))}
-                    >
-                      Add to Cart
-                    </Button>
-                  </Card.Body>
-                </Card>
+                <ProductCard product={val} addProdFunc={addCart} viewDetailsFunc={clickMe}/>
               ))
             )}
             
