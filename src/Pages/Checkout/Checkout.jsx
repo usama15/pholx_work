@@ -3,9 +3,11 @@ import { Button, Checkbox, TextField } from '@material-ui/core'
 import "./styles.css"
 import { CheckoutForm } from '../../component/CheckoutForm/CheckoutForm'
 import bestSellerProducts from "../../data/bestSellerProducts"
+import { useSelector } from 'react-redux'
 
 export const Checkout = () => {
     const [checkboxChecked, setCheckboxChecked] = useState(false);
+    const data = useSelector((state) => state.cart);
     return (
         <div className="checkout">
             <div className="header">
@@ -39,15 +41,15 @@ export const Checkout = () => {
                         <th>Product</th>
                         <th>Subtotal</th>
                     </tr>
-                    {Object.entries(bestSellerProducts).map((product) => (
+                    {data.products.map((product) => (
                         <tr>
-                            <td>{product[1].name} x 1</td>
-                            <td>{product[1].price}</td>
+                            <td>{product.name} x 1</td>
+                            <td>{product.changedPrice}</td>
                         </tr>
                     ))}
                     <tr>
                         <th>Subtotal</th>
-                        <td><b>$1700</b></td>
+                        <td><b>{data.total}</b></td>
                     </tr>
                     <tr>
                         <th>Shipping</th>
@@ -55,7 +57,7 @@ export const Checkout = () => {
                     </tr>
                     <tr>
                         <th>Total</th>
-                        <td><b>$1800</b></td>
+                        <td><b>{data.total + 1000}</b></td>
                     </tr>
                 </table>
                 <div className="placeOrder">
