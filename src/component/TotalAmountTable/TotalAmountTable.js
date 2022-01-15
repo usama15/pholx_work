@@ -1,14 +1,16 @@
 import React from 'react'
 import "./styles.css"
 import bestSellerProducts from "../../data/bestSellerProducts"
+import {useSelector} from "react-redux"
 
 export const TotalAmountTable = () => {
+    const total = useSelector((state) => state.cart.total);
     return (
         <div>
             <table className="totalAmountTable">
                 <tr>
                     <th>Subtotal</th>
-                    <td>{Object.entries(bestSellerProducts).length > 0 ? "$17000": "$0"}</td>
+                    <td>{total}</td>
                 </tr>
                 <tr>
                     <th>Shipping</th>
@@ -16,7 +18,7 @@ export const TotalAmountTable = () => {
                 </tr>
                 <tr>
                     <th>Total</th>
-                    <td>{Object.entries(bestSellerProducts).length > 0 ? "$18000": "$0"}</td>
+                    <td>{total > 0 ? total + 1000: 0}</td>
                 </tr>
             </table>
         </div>

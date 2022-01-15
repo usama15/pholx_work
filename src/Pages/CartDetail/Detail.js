@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -6,6 +6,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Rating from "material-ui-rating";
 import { useLocation } from "react-router-dom";
 import Reviews from "./Reviews";
+import { useDispatch } from "react-redux";
+import { addCartWithQuantity } from "../../Store/Reducers/AddToCart";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,6 +65,8 @@ const CartDetail = (props) => {
   const src =
     "https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
   console.log(location.state.detail.image);
+  const [bookedQuantity,setBookedQuantity] = useState(0);
+  const dispatch = useDispatch();
   return (
     <>
       <Card className={classes.root}>
@@ -123,6 +127,8 @@ const CartDetail = (props) => {
                   paddingLeft: "25px",
                   border: "1px solid black",
                 }}
+                value={bookedQuantity}
+                onChange={(e) => setBookedQuantity(e.target.value)}
               />
               <button
                 style={{
@@ -137,6 +143,7 @@ const CartDetail = (props) => {
                   color: "white",
                   fontWeight: "normal",
                 }}
+                onClick={() => dispatch(addCartWithQuantity({product: location.state.detail,quantity: bookedQuantity}))}
               >
                 Add to cart
               </button>

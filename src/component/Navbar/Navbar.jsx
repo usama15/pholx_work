@@ -21,9 +21,13 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingBasketOutlined";
 import { AccountCircle } from "@material-ui/icons";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useStyles } from "./NavBarStyle";
-import { Link , useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import bestSellerProducts from "../../data/bestSellerProducts";
+import { auth } from "../Profile/Login";
+import { CustomDialog } from "../Dialog/Dialog";
 // import { Redirect } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { useSelector } from "react-redux";
 
 export default function App() {
   let history = useHistory();
@@ -35,6 +39,8 @@ export default function App() {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  const data = useSelector((state) => state.cart.products);
 
   const toggleDrawer = (open) => (event) => {
     event.preventDefault();
@@ -117,7 +123,10 @@ export default function App() {
     >
       <MenuItem>
         <IconButton aria-label="show 1 new notifications" color="inherit">
-          <Badge badgeContent={Object.entries(bestSellerProducts).length} color="secondary">
+          <Badge
+            badgeContent={Object.entries(bestSellerProducts).length}
+            color="secondary"
+          >
             <ShoppingCartIcon />
           </Badge>
         </IconButton>
@@ -201,7 +210,7 @@ export default function App() {
               </ListItemText>
             </List>
           </div>
-          <div className={classes.grow}/>
+          <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton
               edge="end"
@@ -212,18 +221,23 @@ export default function App() {
               onClick={() => history.push("/login")}
               color="inherit"
             >
-                <Link to="/">
-                  <AccountCircle />
-                </Link>
+              <Link to="/">
+                <AccountCircle />
+              </Link>
               {/* {/<AccountCircle />} */}
             </IconButton>
-            <Link to="/cart">
-              <IconButton aria-label="show 1 new notifications" color="inherit">
-                <Badge badgeContent={Object.entries(bestSellerProducts).length} color="secondary">
-                  <ShoppingCartIcon style={{color: "black"}}/>
+            <IconButton aria-label="show 1 new notifications" color="inherit">
+              <Link to="/cart">
+                <Badge
+                  badgeContent={data.length}
+                  color="secondary"
+                >
+                  <ShoppingCartIcon
+                    style={{ color: "black" }}
+                  />
                 </Badge>
-              </IconButton>
-            </Link>
+              </Link>
+            </IconButton>
           </div>
           {/* <div className={classes.sectionMobile}>
             <IconButton

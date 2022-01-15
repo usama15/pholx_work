@@ -17,6 +17,7 @@ import { useDispatch } from "react-redux";
 import { addCart } from "../../Store/Reducers/AddToCart";
 import { SkeletonCard } from "../../component/SkeletonCard/SkeletonCard";
 import { ProductCard } from "../../component/ProductCard/ProductCard";
+import { CustomDialog } from "../../component/Dialog/Dialog";
 
 export const Shop = () => {
   const dispatch = useDispatch();
@@ -26,10 +27,16 @@ export const Shop = () => {
   const [dataExpanded, setDataExpanded] = useState(false);
   const [products, setProducts] = useState(bestSellerProducts);
   const [search, setSearch] = useState("");
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const changeArrow = () => {
     setDataExpanded(!dataExpanded);
   };
-
   useEffect(() => {
     const showData = collection(db, "product");
     const getData = onSnapshot(showData, async (snapshot) => {
@@ -41,7 +48,6 @@ export const Shop = () => {
     });
     return getData;
   }, []);
-
   const searchProducts = () => {
     const prds = [];
     const nameLength = search.length;
@@ -51,7 +57,7 @@ export const Shop = () => {
       }
     });
     if (prds.length == 0) {
-      alert("No Product Found");
+      handleClickOpen();
     } else {
       setSearchedData(prds);
     }
@@ -60,106 +66,15 @@ export const Shop = () => {
     setSearch("");
     setSearchedData(data);
   };
-
   const clickMe = (val) => {
     history.push({ pathname: "/cartdetail", state: { detail: val } });
-    // console.log(val);
   };
-
   return (
     <div>
       <div className="header">
         <h2>Products</h2>
       </div>
-      {/* <Grid container>
-        <Grid item md="3" sm="12" xs="12">
-          <div>
-            <TextField
-              id="outlined-basic"
-              label="Search"
-              variant="outlined"
-              style={{ margin: "50px 0px 20px 5%" }}
-            />
-            {search != "" ? (
-              <ClearIcon onClick={() => resetToDefault()} />
-            ) : null}
-            <Button
-              variant="contained"
-              color="secondary"
-              style={{ marginTop: "60px", borderRadius: "10px" }}
-            >
-              <SearchIcon />
-            </Button>
-          </div>
-          <h3 style={{ margin: "0px 10%", display: "inline" }}>
-            Product Categories
-          </h3>
-          <button
-            style={{ background: "white", border: "none" }}
-            onClick={() => changeArrow()}
-          >
-            {dataExpanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-          </button>
-          {dataExpanded ? (
-            <div
-              id="dataExpanded"
-              style={{ textAlign: "center", margin: "30px" }}
-            >
-              <p>Earphone</p>
-              <p>Gadgets</p>
-              <p>Gaming</p>
-              <p>Headphone</p>
-              <p>Laptop</p>
-              <p>Speaker</p>
-              <p>Uncategorized</p>
-            </div>
-          ) : null}
-          <Button
-            id="filter"
-            variant="contained"
-            color="secondary"
-            style={{ marginTop: "25px", borderRadius: "10px" }}
-          >
-            Filter
-          </Button>
-        </Grid>
-        <Grid item md="9" sm="12" xs="12">
-          <h1 style={{ margin: "50px 0px 0px 15%", textAlign: "center" }}>
-            Shop
-          </h1>
-          <Grid container style={{ margin: "0px 0px 50px 10%" }} spacing={4}>
-            {Object.entries(products).map(
-              ([item, { name, picture, price }]) => {
-                return (
-                  <Grid
-                    item
-                    md={3}
-                    xs={12}
-                    sm={5}
-                    style={{ margin: "10px 0px 10px 30px" }}
-                  >
-                    <Card>
-                      <Card.Img
-                        variant="top"
-                        src={picture}
-                        style={{ borderRadius: "5%" }}
-                        width="250"
-                        height="250"
-                      />
-                      <Card.Body style={{ marginTop: "10px" }}>
-                        <Card.Title>{name}</Card.Title>
-                        <Card.Title style={{ fontWeight: "bold" }}>
-                          {price}
-                        </Card.Title>
-                      </Card.Body>
-                    </Card>
-                  </Grid>
-                );
-              }
-            )}
-          </Grid>
-        </Grid>
-      </Grid> */}
+      <CustomDialog text="No Product Found" open={open} onClose={handleClose} />
       <div className="main_shop">
         <div className="left">
           <div className="textField">
@@ -261,28 +176,6 @@ export const Shop = () => {
                 <ProductCard product={val} addProdFunc={addCart} viewDetailsFunc={clickMe}/>
               ))
             )}
-            
-            {/* {Object.entries(bestSellerProducts).map(
-              ([item, { name, picture, price }]) => {
-                return (
-                  <Card>
-                    <Card.Img
-                      variant="top"
-                      src={picture}
-                      width="100"
-                      height="212"
-                    />
-                    <Card.Body>
-                      <Card.Title>{name}</Card.Title>
-                      <Card.Title style={{ fontWeight: "bold" }}>
-                        {price}
-                      </Card.Title>
-                      <Button variant="contained" className="addBtn">Add to Cart</Button>
-                    </Card.Body>
-                  </Card>
-                );
-              }
-            )} */}
           </div>
         </div>
       </div>

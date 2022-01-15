@@ -129,8 +129,8 @@ const Reviews = () => {
             style={{
               marginTop: "40px",
               width: "100%",
-              padding: "50px 0px",
-              height: "1300px",
+              // padding: "25px 0px",
+              height: "auto",
             }}
           >
             <div style={{ margin: "0px 24vw" }}>
@@ -312,15 +312,16 @@ const Reviews = () => {
                 }}
               ></textarea>
             </div>
-            <div style={{ width: "100%", height: "100px" }}>
+            <div style={{ width: "100%", height: "100px",margin: "0px 0px"}}>
               <button
                 style={{
+                  display: "block",
                   fontSize: "20px",
                   width: "200px",
                   borderRadius: "50px",
                   padding: "10px",
-                  paddingLeft: "25px",
-                  marginLeft: "20px",
+                  paddingLeft: "10px",
+                  margin: "10px auto",
                   border: "none",
                   backgroundColor: "red",
                   color: "white",

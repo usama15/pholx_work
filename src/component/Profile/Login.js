@@ -73,8 +73,10 @@ function a11yProps(index) {
   };
 }
 
+export const auth = getAuth(); 
+
 const Login = () => {
-  const auth = getAuth();
+  
   const [product, setProduct] = React.useState([]);
   const [product2, setProduct2] = React.useState([]);
   const [userUid, setUserUid] = React.useState();
