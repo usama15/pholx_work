@@ -111,23 +111,43 @@ const cartReducer = createSlice({
           index = i;
         }
       });
-      addedItem = {
-        ...addedItem,
-        bookedQuantity:
-          parseInt(action.payload.quantity),
-        changedPrice:
-            parseInt(action.payload.quantity) *
-          parseInt(addedItem.price),
-      };
-      let total = 0;
-      let products = [...state.products];
-      products[index] = addedItem;
-      products.map((product) => total += product.changedPrice);
-      return {
-        ...state,
-        products,
-        total,
-      };
+      if (action.payload.quantity > 0) {
+        addedItem = {
+          ...addedItem,
+          bookedQuantity: parseInt(action.payload.quantity),
+          changedPrice:
+            parseInt(action.payload.quantity) * parseInt(addedItem.price),
+        };
+        let total = 0;
+        let products = [...state.products];
+        products[index] = addedItem;
+        products.map((product) => (total += product.changedPrice));
+        return {
+          ...state,
+          products,
+          total,
+        };
+      } 
+      else {
+        let newCartData = state.products.filter(
+          (shoe) => action.payload.id !== shoe.ProductID
+        );
+        let total = state.total - addedItem.changedPrice;
+        // console.log(removedItem.quantity);
+        if (state.products.length === 1) {
+          return {
+            ...state,
+            products: [],
+            total: 0,
+          };
+        } else {
+          return {
+            ...state,
+            products: newCartData,
+            total,
+          };
+        }
+      }
     },
     removeFromCart: (state, action) => {
       let removedItem;
@@ -156,75 +176,9 @@ const cartReducer = createSlice({
         };
       }
     },
-    addQuantity: (state, action) => {
-      let addedItem;
-      let index;
-      state.products.map((shoe, i) => {
-        if (shoe.id === action.payload) {
-          addedItem = shoe;
-          index = i;
-        }
-        return addedItem;
-      });
-      let total = state.total + addedItem.price;
-      addedItem = {
-        ...addedItem,
-        quantity: addedItem.quantity + 1,
-        changedPrice: (addedItem.quantity + 1) * addedItem.price,
-      };
-      let products = [...state.products];
-      products[index] = addedItem;
-      localStorage.setItem("products", JSON.stringify(products));
-      localStorage.setItem("total", JSON.stringify(total));
-      return {
-        ...state,
-        products,
-        total,
-      };
-    },
-    subtractQuantity: (state, action) => {
-      let addedItem;
-      let index;
-      state.products.map((shoe, i) => {
-        if (shoe.id === action.payload) {
-          addedItem = shoe;
-          index = i;
-        }
-        return addedItem;
-      });
-      if (addedItem.quantity === 1) {
-        let newCartData = state.products.filter(
-          (shoe) => shoe.id !== action.payload
-        );
-        let total = state.total - addedItem.changedPrice;
-        localStorage.setItem("products", JSON.stringify(newCartData));
-        localStorage.setItem("total", JSON.stringify(total));
-        return {
-          ...state,
-          products: newCartData,
-          total,
-        };
-      } else {
-        addedItem = {
-          ...addedItem,
-          quantity: addedItem.quantity - 1,
-          changedPrice: (addedItem.quantity - 1) * addedItem.price,
-        };
-        let products = [...state.products];
-        products[index] = addedItem;
-        let total = state.total - addedItem.price;
-        localStorage.setItem("products", JSON.stringify(products));
-        localStorage.setItem("total", JSON.stringify(total));
-        return {
-          ...state,
-          products,
-          total,
-        };
-      }
-    },
   },
 });
 
-export const { addCart, addCartWithQuantity, removeFromCart,updateCart } =
+export const { addCart, addCartWithQuantity, removeFromCart, updateCart } =
   cartReducer.actions;
 export default cartReducer.reducer;
