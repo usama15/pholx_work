@@ -68,6 +68,32 @@ export const Checkout = () => {
         await setDoc(doc(db, "orders", `${id}`), {
           id: `${id}`,
           billingDetails: billingDetails,
+          order: data.products,
+          total: data.total + 1000,
+        }).then(() => handleSuccessOpen());
+      } else {
+        handleFailureOpen();
+      }
+    }
+    else {
+      if (
+        billingDetails["firstName"] != "" &&
+        billingDetails["lastName"] != "" &&
+        billingDetails["address"] != "" &&
+        billingDetails["city"] != "" &&
+        billingDetails["postalCode"] != "" &&
+        billingDetails["phone"] != "" &&
+        billingDetails["email"] != "" &&
+        shippingDetails["firstName"] != "" &&
+        shippingDetails["lastName"] != "" &&
+        shippingDetails["address"] != "" &&
+        shippingDetails["city"] != "" &&
+        shippingDetails["postalCode"] != ""
+      ) {
+        const id = Math.floor(Math.random() * 10000);
+        await setDoc(doc(db, "orders", `${id}`), {
+          id: `${id}`,
+          billingDetails: billingDetails,
           shippingDetails: shippingDetails,
           order: data.products,
           total: data.total + 1000,
