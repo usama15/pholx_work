@@ -21,13 +21,13 @@ export const CartTable = () => {
       </thead>
       <tbody>
         {data.length > 0 ? (
-          data.map(({ name, price,bookedQuantity,changedPrice,ProductID }) => (
+          data.map(({ name, rate,bookedQuantity,changedPrice,ProductID }) => (
             <tr>
               <td style={{ color: "red", cursor: "pointer" }} id="removeBtn" onClick={() => dispatch(removeFromCart(ProductID))}>
                 X
               </td>
               <td data-label="Name:">{name}</td>
-              <td data-label="Price:">{price}</td>
+              <td data-label="Price:">{rate}</td>
               <td data-label="Quantity:">
                 <input type="number" value={bookedQuantity} style={{ width: "50px" }} onChange={(e) => dispatch(updateCart({id:ProductID,quantity: e.target.value}))}/>
               </td>

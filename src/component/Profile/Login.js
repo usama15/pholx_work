@@ -83,18 +83,19 @@ const Login = () => {
   const [userState, setUserState] = React.useState();
   const [fData, setFdata] = React.useState([]);
   const dispatch = useDispatch();
-  const udata = useSelector((state) => state.cart.initialState);
-  const udata2 = useSelector((state) => state.user.initialState);
+  const udata = useSelector((state) => state.cart);
+  const udata2 = useSelector((state) => state.user.initialUserState);
+  console.log(udata2);
   const test = addUserData({
-    email: udata.email,
-    gender: udata.gender,
-    date: udata.date,
-    id: udata.id,
-    phone: udata.phone,
-    fullname: udata.fullname,
+    email: udata2.email,
+    gender: udata2.gender,
+    date: udata2.date,
+    id: udata2.id,
+    phone: udata2.phone,
+    fullname: udata2.fullname,
   });
   // const udata2 = useSelector((state) => state.userData.initialState);
-  console.log(test);
+  // console.log(test);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -218,25 +219,25 @@ const Login = () => {
                   {/* <Card sx={{ width: "100%", display: "flex", flexDirection: "row", justifyContent: "space-between" }}> */}
                   <div>
                     <h5>Full Name</h5>
-                    <h5 className="lessHeading">{udata.fullname}</h5>
+                    <h5 className="lessHeading">{udata2.fullname}</h5>
                   </div>
                   <div>
                     <h5>Email Address</h5>
-                    <h5 className="lessHeading">{udata.email}</h5>
+                    <h5 className="lessHeading">{udata2.email}</h5>
                   </div>
                   <div>
                     <h5>Mobile</h5>
-                    <h5 className="lessHeading">{udata.phone}</h5>
+                    <h5 className="lessHeading">{udata2.phone}</h5>
                   </div>
                 </div>
                 <div className="pro-div-m2">
                   <div>
                     <h5>Birthday</h5>
-                    <h5 className="lessHeading">{udata.date}</h5>
+                    <h5 className="lessHeading">{udata2.date}</h5>
                   </div>
                   <div>
                     <h5>Gender</h5>
-                    <h5 className="lessHeading">{udata.Gender}</h5>
+                    <h5 className="lessHeading">{udata2.Gender}</h5>
                   </div>
                 </div>
                 <div className="pro-div-btn">

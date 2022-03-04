@@ -24,9 +24,9 @@ const cartReducer = createSlice({
           ...action.payload,
           bookedQuantity: parseInt(addedItem.bookedQuantity) + 1,
           changedPrice:
-            (addedItem.bookedQuantity + 1) * parseInt(addedItem.price),
+            (addedItem.bookedQuantity + 1) * parseInt(addedItem.rate),
         };
-        let total = state.total + parseInt(action.payload.price);
+        let total = state.total + parseInt(action.payload.rate);
         let products = [...state.products];
         products[index] = action.payload;
         return {
@@ -38,10 +38,10 @@ const cartReducer = createSlice({
         action.payload = {
           ...action.payload,
           bookedQuantity: 1,
-          changedPrice: parseInt(action.payload.price),
+          changedPrice: parseInt(action.payload.rate),
         };
         let data = [...state.products, action.payload];
-        let total = state.total + parseInt(action.payload.price);
+        let total = state.total + parseInt(action.payload.rate);
         return {
           ...state,
           products: data,
@@ -71,7 +71,7 @@ const cartReducer = createSlice({
           changedPrice:
             (parseInt(addedItem.bookedQuantity) +
               parseInt(action.payload.quantity)) *
-            parseInt(addedItem.price),
+            parseInt(addedItem.rate),
         };
         let total =
           state.total -
@@ -89,12 +89,12 @@ const cartReducer = createSlice({
           ...action.payload.product,
           bookedQuantity: parseInt(action.payload.quantity),
           changedPrice:
-            parseInt(action.payload.product.price) * action.payload.quantity,
+            parseInt(action.payload.product.rate) * action.payload.quantity,
         };
         let data = [...state.products, action.payload.product];
         let total =
           state.total +
-          parseInt(action.payload.product.price) * action.payload.quantity;
+          parseInt(action.payload.product.rate) * action.payload.quantity;
         return {
           ...state,
           products: data,
@@ -116,7 +116,7 @@ const cartReducer = createSlice({
           ...addedItem,
           bookedQuantity: parseInt(action.payload.quantity),
           changedPrice:
-            parseInt(action.payload.quantity) * parseInt(addedItem.price),
+            parseInt(action.payload.quantity) * parseInt(addedItem.rate),
         };
         let total = 0;
         let products = [...state.products];

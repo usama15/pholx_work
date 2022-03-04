@@ -17,7 +17,7 @@ export const ProductCard = ({product,addProdFunc,viewDetailsFunc}) => {
       />
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
-        <Card.Title style={{ fontWeight: "bold" }}>{product.price}</Card.Title>
+        <Card.Title style={{ fontWeight: "bold" }}>{product.rate}</Card.Title>
         <Button
           variant="contained"
           className="addBtn"

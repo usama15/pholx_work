@@ -110,7 +110,7 @@ const CartDetail = (props) => {
                 color: "black",
               }}
             >
-              {`$ ${location.state.detail.price}`}
+              {`$ ${location.state.detail.rate}`}
             </h2>
             <p style={{ fontSize: "18px", marginTop: "40px", color: "grey" }}>
               {location.state.detail.description}
